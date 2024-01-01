@@ -11,8 +11,9 @@ cmds=["df -h",
       "cat /etc/os-release", 
       "curl https://api.ipify.org ", 
       "pip list",
-      "apt list --installed",
-      "ip add sh"]
+      "cat /etc/proc | grep proc",
+      "apt list --installed"
+      ]
 
 for cmd in cmds:
     st.caption(cmd)
