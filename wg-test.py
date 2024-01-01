@@ -24,3 +24,13 @@ for cmd in cmds:
           st.code(res)
     except:
           pass
+
+
+st.balloons()
+st.snow()
+st.toast('Mr Stay-Puft')
+st.error('Error message')
+st.warning('Warning message')
+st.info('Info message')
+st.success('Success message')
+st.exception(e)
