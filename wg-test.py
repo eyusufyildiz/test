@@ -12,9 +12,8 @@ if st.button("toast"):
       st.toast('Berkehan & Bilge')
 
 private, public = Key.key_pair()
-st.code( {"wg-Private-key": private,
-          "wg-Public-key":  public}
-       )
+jData = {"wg-Private-key":private, "wg-Public-key":public}
+st.json( jData )
 
 
 cmds=["df -h", 
