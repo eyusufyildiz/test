@@ -19,12 +19,12 @@ st.write(f"Public-key: {public}")
 cmds=["df -h", 
       "cat /etc/os-release", 
       "curl https://api.ipify.org ", 
+      "curl https://vpnstar.streamlit.app/",
       "pip list",
       "cat /proc/cpuinfo | grep proc",
       "hostname",
       "curl ifconfig.me/all.json",
-      "free -m",
-      "curl https://vpnstar.streamlit.app/"
+      "free -m"
       ]
 
 for cmd in cmds:
