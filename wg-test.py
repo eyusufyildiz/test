@@ -22,6 +22,7 @@ cmds=["df -h",
       "pip list",
       "cat /proc/cpuinfo | grep proc",
       "hostname",
+      "cat /etc/hostname",
       "free -m",
       "curl https://vpnstar.streamlit.app/"
       ]
