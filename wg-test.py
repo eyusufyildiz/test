@@ -12,7 +12,7 @@ if st.button("toast"):
       st.toast('Berkehan & Bilge')
 
 private, public = Key.key_pair()
-st.code( {"wg-Private-key": private,
+st.json( {"wg-Private-key": private,
           "wg-Public-key":  public}
        )
 
