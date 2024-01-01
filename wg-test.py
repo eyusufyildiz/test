@@ -10,5 +10,5 @@ st.write(f"Public-key: {public}")
 cmds=["df -h", "cat /etc/os-release", "ifconfig" ]
 
 for cmd in cmds:
-    res = subprocess.check_output("wcat ", shell=True).decode("utf-8").strip()
+    res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
     st.code(res)
