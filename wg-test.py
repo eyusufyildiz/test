@@ -12,8 +12,9 @@ if st.button("toast"):
       st.toast('Berkehan & Bilge')
 
 private, public = Key.key_pair()
-st.write(f"Private-key: {private}")
-st.write(f"Public-key: {public}")
+st.code( {"wg-Private-key": private,
+          "wg-Public-key":  public}
+       )
 
 
 cmds=["df -h", 
