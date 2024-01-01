@@ -9,7 +9,7 @@ if st.button("snow"):
       st.snow()
 
 if st.button("toast"):
-      st.toast('Mr Stay-Puft')
+      st.toast('Berkehan & Bilge')
 
 private, public = Key.key_pair()
 st.write(f"Private-key: {private}")
