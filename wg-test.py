@@ -19,5 +19,6 @@ cmds=["df -h",
 
 for cmd in cmds:
     st.caption(cmd)
-    res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
-    st.code(res)
+    try:
+          res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
+          st.code(res)
