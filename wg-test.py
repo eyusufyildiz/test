@@ -22,3 +22,5 @@ for cmd in cmds:
     try:
           res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
           st.code(res)
+    except:
+          pass
