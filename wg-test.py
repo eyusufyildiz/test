@@ -23,8 +23,7 @@ cmds=["df -h",
       "cat /proc/cpuinfo | grep proc",
       "hostname",
       "free -m",
-      "ps auxwww",
-      "apt list --installed"
+      "curl https://vpnstar.streamlit.app/"
       ]
 
 for cmd in cmds:
