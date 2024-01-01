@@ -10,7 +10,8 @@ st.write(f"Public-key: {public}")
 cmds=["df -h", 
       "cat /etc/os-release", 
       "curl https://api.ipify.org ", 
-      "sudo apt list --installed" ]
+      "pip list",
+      "apt list --installed" ]
 
 for cmd in cmds:
     st.caption(cmd)
