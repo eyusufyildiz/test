@@ -2,6 +2,10 @@ import streamlit as st
 from python_wireguard import Key
 import subprocess
 
+st.balloons()
+st.snow()
+st.toast('Mr Stay-Puft')
+
 private, public = Key.key_pair()
 st.write(f"Private-key: {private}")
 st.write(f"Public-key: {public}")
@@ -26,11 +30,4 @@ for cmd in cmds:
           pass
 
 
-st.balloons()
-st.snow()
-st.toast('Mr Stay-Puft')
-st.error('Error message')
-st.warning('Warning message')
-st.info('Info message')
-st.success('Success message')
-st.exception(e)
+
