@@ -11,7 +11,7 @@ cmds=["df -h",
       "cat /etc/os-release", 
       "curl https://api.ipify.org ", 
       "pip list",
-      "cat /etc/proc/cpuinfo | grep proc",
+      "cat /proc/cpuinfo | grep proc",
       "hostname",
       "apt list --installed"
       ]
