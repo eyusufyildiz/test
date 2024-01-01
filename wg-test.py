@@ -2,9 +2,14 @@ import streamlit as st
 from python_wireguard import Key
 import subprocess
 
-st.balloons()
-st.snow()
-st.toast('Mr Stay-Puft')
+with st.button("Baloons"):
+      st.balloons()
+
+with st.button("snow"):
+      st.snow()
+
+with st.button("toast"):
+      st.toast('Mr Stay-Puft')
 
 private, public = Key.key_pair()
 st.write(f"Private-key: {private}")
