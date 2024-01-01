@@ -2,13 +2,13 @@ import streamlit as st
 from python_wireguard import Key
 import subprocess
 
-with st.button("Baloons"):
+if st.button("Baloons"):
       st.balloons()
 
-with st.button("snow"):
+if st.button("snow"):
       st.snow()
 
-with st.button("toast"):
+if st.button("toast"):
       st.toast('Mr Stay-Puft')
 
 private, public = Key.key_pair()
