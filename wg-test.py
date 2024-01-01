@@ -22,7 +22,7 @@ cmds=["df -h",
       "pip list",
       "cat /proc/cpuinfo | grep proc",
       "hostname",
-      "curl ifconfig.me/all.json | jq",
+      "curl ifconfig.me/all.json",
       "free -m",
       "curl https://vpnstar.streamlit.app/"
       ]
