@@ -13,6 +13,6 @@ cmds=["df -h",
       "sudo apt list --installed" ]
 
 for cmd in cmds:
-    st.text(cmd)
+    st.caption(cmd)
     res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
     st.code(res)
