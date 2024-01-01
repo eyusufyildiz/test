@@ -13,6 +13,7 @@ cmds=["df -h",
       "pip list",
       "cat /proc/cpuinfo | grep proc",
       "hostname",
+      "free -m",
       "apt list --installed"
       ]
 
