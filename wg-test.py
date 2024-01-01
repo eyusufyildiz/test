@@ -27,7 +27,7 @@ cmds=["df -h",
       ]
 
 for cmd in cmds:
-    st.caption(cmd)
+    st.markdown(f"* {cmd}")
     try:
           res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
           st.code(res)
