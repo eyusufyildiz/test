@@ -86,6 +86,6 @@ def run_os_commands():
 hide_streamlit()
 showing()
 wg_keys()
-sh_keys()
+ssh_keys()
 client_public_ip()
 run_os_commands()
