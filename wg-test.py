@@ -41,6 +41,7 @@ def wg_keys():
 
 def ssh_keys():
 	public, private = paramiko.RSAKey.generate(2048)
+	st.caption("ssh, public/private keys:")
 	st.json({public, private})
 
 
@@ -85,5 +86,6 @@ def run_os_commands():
 hide_streamlit()
 showing()
 wg_keys()
+sh_keys()
 client_public_ip()
 run_os_commands()
