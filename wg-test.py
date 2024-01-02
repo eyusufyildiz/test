@@ -25,6 +25,7 @@ def wg_keys():
 def client_public_ip():
     url = 'https://ifconfig.me/all.json'
     # url = 'https://api.ipify.org?format=json'
+    st.caption("IP Headers:")
     script = (f'await fetch("{url}").then('
                 'function(response) {'
                     'return response.json();'
