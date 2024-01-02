@@ -56,5 +56,5 @@ def run_os_commands():
 
 showing()
 wg_keys()
-rsa_demo()
+generate_ssh_key_pair()
 run_os_commands()
