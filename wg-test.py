@@ -33,10 +33,8 @@ def client_public_ip():
     try:
         result = st_javascript(script)
         #return result
-        st.code(result)
         if isinstance(result, dict) and 'ip' in result:
-            #return result
-            st.code(result)
+            return result
     except:
         pass
 
@@ -64,5 +62,5 @@ def run_os_commands():
 
 showing()
 wg_keys()
-client_public_ip()
+st.code( client_public_ip() )
 run_os_commands()
