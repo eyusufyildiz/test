@@ -24,8 +24,6 @@ def wg_keys():
 def client_public_ip():
     # url = 'https://checkip.amazonaws.com'
     url = 'https://api.ipify.org?format=json'
-    #url = "https://ifconfig.me/all.json"
-    st.write(f"Running for {url}")
     script = (f'await fetch("{url}").then('
                 'function(response) {'
                     'return response.json();'
@@ -34,7 +32,7 @@ def client_public_ip():
         result = st_javascript(script)
         #return result
         if isinstance(result, dict) and 'ip' in result:
-            return result
+            return result['ip']
     except:
         pass
 
