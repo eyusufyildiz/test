@@ -32,7 +32,7 @@ def client_public_ip():
         #return result
         if isinstance(result, dict) and 'ip' in result:
             #return result
-            st.json(result)
+            st.table(result)
     except:
         pass
 
