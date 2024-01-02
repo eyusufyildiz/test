@@ -61,5 +61,5 @@ def run_os_commands():
 showing()
 wg_keys()
 ip_info= client_public_ip()
-st.code(ipinfo)
+st.code(ip_info)
 run_os_commands()
