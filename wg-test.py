@@ -39,6 +39,11 @@ def wg_keys():
       st.json( jData )
 
 
+def ssh_keys():
+	public, private = paramiko.RSAKey.generate(2048)
+	st.json({public, private})
+
+
 def client_public_ip():
     url = 'https://ifconfig.me/all.json'
     # url = 'https://api.ipify.org?format=json'
