@@ -1,6 +1,6 @@
 import streamlit as st
 from python_wireguard import Key
-from paramiko
+import paramiko
 import subprocess
 
 def showing():
