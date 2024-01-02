@@ -19,19 +19,6 @@ def wg_keys():
       st.json( jData )
 
 
-def generate_ssh_key_pair():
-    # Generate an RSA key pair
-    key = paramiko.RSAKey.generate(2048)
-
-    # Get the private key string
-    private_key = key.get_private_key().decode("utf-8")
-
-    # Get the public key string
-    public_key = key.get_base64()
-
-    st.code(public_key)
-    st.code(private_key)
-    #return private_key, public_key
 
 def run_os_commands():
       cmds=["df -h", 
@@ -56,5 +43,4 @@ def run_os_commands():
 
 showing()
 wg_keys()
-generate_ssh_key_pair()
 run_os_commands()
