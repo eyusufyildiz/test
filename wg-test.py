@@ -46,8 +46,8 @@ def run_os_commands():
             "curl https://vpnstar.streamlit.app/",
             "pip list",
             "cat /proc/cpuinfo | grep proc",
-            "hostname",
-            "free -m"
+            "hostname"
+            #"free -m"
             ]
       
       for cmd in cmds:
