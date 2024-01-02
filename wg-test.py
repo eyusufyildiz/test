@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_javascript import st_javascript
 from python_wireguard import Key
 import paramiko
 import subprocess
