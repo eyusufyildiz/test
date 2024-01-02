@@ -23,8 +23,8 @@ def wg_keys():
 
 
 def client_public_ip():
-    # url = 'https://checkip.amazonaws.com'
-    url = 'https://api.ipify.org?format=json'
+    url = 'https://ifconfig.me/all.json'
+    # url = 'https://api.ipify.org?format=json'
     script = (f'await fetch("{url}").then('
                 'function(response) {'
                     'return response.json();'
@@ -32,8 +32,9 @@ def client_public_ip():
     try:
         result = st_javascript(script)
         #return result
-        if isinstance(result, dict) and 'ip' in result:
-            return result['ip']
+        st.dataframe(result)
+        #if isinstance(result, dict) and 'ip' in result:
+        #    return result['ip']
     except:
         pass
 
@@ -61,6 +62,5 @@ def run_os_commands():
 
 showing()
 wg_keys()
-ip_info= client_public_ip()
-st.code(ip_info)
+client_public_ip()
 run_os_commands()
