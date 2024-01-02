@@ -33,10 +33,10 @@ def client_public_ip():
     try:
         result = st_javascript(script)
         #return result
-        st.dataframe(result)
+        st.code(result)
         if isinstance(result, dict) and 'ip' in result:
             #return result
-            st.dataframe(result)
+            st.code(result)
     except:
         pass
 
