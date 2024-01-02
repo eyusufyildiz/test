@@ -19,6 +19,23 @@ def wg_keys():
       st.json( jData )
 
 
+def client_public_ip():
+    # url = 'https://checkip.amazonaws.com'
+    # url = 'https://api.ipify.org?format=json'
+    url = "https://ifconfig.me/all.json"
+    script = (f'await fetch("{url}").then('
+                'function(response) {'
+                    'return response.json();'
+                '})')
+    try:
+        result = st_javascript(script)
+        #return result
+        if isinstance(result, dict) and 'ip' in result:
+            #return result
+            st.json(result)
+    except:
+        pass
+
 
 def run_os_commands():
       cmds=["df -h", 
@@ -43,4 +60,5 @@ def run_os_commands():
 
 showing()
 wg_keys()
+client_public_ip()
 run_os_commands()
