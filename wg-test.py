@@ -4,6 +4,16 @@ from python_wireguard import Key
 import paramiko
 import subprocess
 
+def hide_streamlit():
+      hide_streamlit_style = """
+            <style>
+                  MainMenu {visibility: hidden;}
+                  footer {visibility: hidden;}
+            </style>
+      """
+      st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
+
 def showing():
       col1, col2, col3 = st.columns(3)
       with col1:
@@ -60,7 +70,7 @@ def run_os_commands():
           except:
                 pass
 
-
+hide_streamlit()
 showing()
 wg_keys()
 client_public_ip()
