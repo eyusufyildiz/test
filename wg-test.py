@@ -1,6 +1,6 @@
 import streamlit as st
 from python_wireguard import Key
-from Crypto.PublicKey import RSA
+from paramiko
 import subprocess
 
 def showing():
