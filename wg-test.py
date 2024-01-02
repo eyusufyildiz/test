@@ -49,4 +49,5 @@ def run_os_commands():
 
 showing()
 wg_keys()
+rsa_demo()
 run_os_commands()
