@@ -1,5 +1,6 @@
 import streamlit as st
 from python_wireguard import Key
+from Crypto.PublicKey import RSA
 import subprocess
 
 def showing():
@@ -19,7 +20,6 @@ def wg_keys():
 
 
 def rsa_demo():
-      from Crypto.PublicKey import RSA
       key = RSA.generate(2048)
       public_key = key.publickey().exportKey("PEM")
       private_key = key.exportKey("PEM")
