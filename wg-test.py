@@ -4,14 +4,16 @@ import paramiko
 import subprocess
 
 def showing():
-      if st.button("Baloons"):
-            st.balloons()
-      
-      if st.button("snow"):
-            st.snow()
-      
-      if st.button("toast"):
-            st.toast('Berkehan & Bilge')
+      col1, col2, col3 = st.columns(3)
+      with col1:
+            if st.button("Baloons"):
+                  st.balloons()
+      with col2:
+            if st.button("snow"):
+                  st.snow()
+      with col3:
+            if st.button("toast"):
+                  st.toast('Berkehan & Bilge')
 
 def wg_keys():
       private, public = Key.key_pair()
@@ -21,8 +23,8 @@ def wg_keys():
 
 def client_public_ip():
     # url = 'https://checkip.amazonaws.com'
-    # url = 'https://api.ipify.org?format=json'
-    url = "https://ifconfig.me/all.json"
+    url = 'https://api.ipify.org?format=json'
+    #url = "https://ifconfig.me/all.json"
     st.write(f"Running for {url}")
     script = (f'await fetch("{url}").then('
                 'function(response) {'
