@@ -17,6 +17,15 @@ def wg_keys():
       jData = {"wg-Private-key":private, "wg-Public-key":public}
       st.json( jData )
 
+
+def rsa_demo():
+      from Crypto.PublicKey import RSA
+      key = RSA.generate(2048)
+      public_key = key.publickey().exportKey("PEM")
+      private_key = key.exportKey("PEM")
+      st.code(public_key)
+      st.code(private_key)
+
 def run_os_commands():
       cmds=["df -h", 
             "cat /etc/os-release", 
