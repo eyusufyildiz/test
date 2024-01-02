@@ -7,7 +7,7 @@ import subprocess
 def hide_streamlit():
       hide_streamlit_style = """
             <style>
-                  MainMenu {visibility: hidden;}
+                  #MainMenu {visibility: hidden;}
                   footer {visibility: hidden;}
             </style>
       """
