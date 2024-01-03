@@ -1,7 +1,5 @@
 import streamlit as st
 from streamlit_javascript import st_javascript
-from python_wireguard import Key
-import paramiko
 import subprocess
 
 def hide_streamlit():
@@ -34,16 +32,30 @@ def showing():
                   st.toast('Berkehan & Bilge')
 
 def wg_keys():
-      private, public = Key.key_pair()
-      jData = {"wg-Private-key":private, "wg-Public-key":public}
-      st.json( jData )
+	from python_wireguard import Key
+	
+	private, public = Key.key_pair()
+	jData = {"wg-Private-key":private, "wg-Public-key":public}
+	st.json( jData )
 
 
 def ssh_keys():
-	public, private = paramiko.RSAKey.generate(2048)
-	st.caption("ssh, public/private keys:")
-	st.json({public, private})
-
+	import paramiko
+	from paramiko import RSAKey
+	from io import StringIO  
+	
+	# Generate a new key pair
+	#key = paramiko.RSAKey.generate(bits=2048)
+	#key.get_name()
+	#key.get_base64
+	
+	# Generatees a public and private key
+	key = paramiko.RSAKey.generate(2048)
+	privateString = StringIO()
+	key.write_private_key(privateString)
+	st.code(key.get_base64())
+	st.code(privateString.getvalue())
+	
 
 def client_public_ip():
     url = 'https://ifconfig.me/all.json'
