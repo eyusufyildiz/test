@@ -113,6 +113,7 @@ def run_os_commands():
 hide_streamlit()
 showing()
 wg_keys()
+create_ssh_keypair()
 ssh_keys()
 client_public_ip()
 run_os_commands()
