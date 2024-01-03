@@ -47,8 +47,7 @@ def ssh_keys():
   
 	path = os.getcwd() 
 	dir_list = os.listdir(path) 
-	st.code(f"Files and directories in ' {path}: \n
-		{dir_list}") 
+	st.code(f"Files and directories in {path}: \n {dir_list}") 
 
 	# Generatees a public and private key
 	key = paramiko.RSAKey.generate(2048)
