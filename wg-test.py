@@ -41,15 +41,15 @@ def wg_keys():
 
 
 def ssh_keys():
-	import paramiko
+	import paramiko, os
 	from paramiko import RSAKey
 	from io import StringIO  
-	
-	# Generate a new key pair
-	#key = paramiko.RSAKey.generate(bits=2048)
-	#key.get_name()
-	#key.get_base64
-	
+  
+	path = os.getcwd() 
+	dir_list = os.listdir(path) 
+	st.code(f"Files and directories in ' {path}: \n
+		{dir_list}") 
+
 	# Generatees a public and private key
 	key = paramiko.RSAKey.generate(2048)
 	privateString = StringIO()
