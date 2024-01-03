@@ -36,6 +36,7 @@ def wg_keys():
 	
 	private, public = Key.key_pair()
 	jData = {"wg-Private-key":private, "wg-Public-key":public}
+	st.caption("WG-Keys:")
 	st.json( jData )
 
 
@@ -53,6 +54,7 @@ def ssh_keys():
 	key = paramiko.RSAKey.generate(2048)
 	privateString = StringIO()
 	key.write_private_key(privateString)
+	st.caption("SSH-Keys:")
 	st.code(key.get_base64())
 	st.code(privateString.getvalue())
 	
