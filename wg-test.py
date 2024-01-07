@@ -117,13 +117,6 @@ def menu():
       opt = st.selectbox('--> Select', ["public", "admin", "user"])
       st.title(f"{opt} is selected..")
 
-      ## menu_list = {"wg_keys": wg_keys(), 
-      ##             "ssh_keys": ssh_keys(),  
-      ##             "client_public_ip": client_public_ip(), 
-      ##             'run_os_commands': run_os_commands(), 
-      ##             'get_headers': get_headers()
-      ## }
-
       public_menu = ["client_public_ip"]
       admin_menu  = ["wg_keys", "ssh_keys"]
       user_menu   = ["run_os_commands", 'get_headers']
@@ -138,8 +131,13 @@ def menu():
                   menu_icon = "gear",
                   #default_index=0
             )
-            st.write(f"{selected} is selected..")
-      #menu_list[selected]
+
+            if selected == "wg_keys": wg_keys()
+            elif selected == "ssh_keys": ssh_keys()
+            elif selected == "client_public_ip": client_public_ip()
+            elif selected == 'run_os_commands': run_os_commands()
+            elif selected == 'get_headers': get_headers()
+            
 
 st.title("Streamlit server tests:")
 hide_streamlit()
