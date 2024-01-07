@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_javascript import st_javascript
-import subprocess, random
+import subprocess
 
 def hide_streamlit():
       hide_streamlit_style = """<style>
@@ -138,14 +138,8 @@ def menu():
                   menu_icon = "gear",
                   #default_index=0
             )
-
-      #menu_list[selected]
-      if   selected == "wg_keys":  wg_keys()
-      elif selected == "ssh_keys": ssh_keys()
-      elif selected == "client_public_ip": client_public_ip()
-      elif selected == 'run_os_commands': run_os_commands()
-      elif selected == 'get_headers': get_headers()
-
+      st.write(f"{selected} is selected..")
+      menu_list[selected]
 
 st.title("Streamlit server tests:")
 hide_streamlit()
