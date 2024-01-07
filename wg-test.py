@@ -117,12 +117,12 @@ def menu():
       opt = st.selectbox('--> Select', ["public", "admin", "user"])
       st.title(f"{opt} is selected..")
 
-      menu_list = {"wg_keys": wg_keys(), 
-                  "ssh_keys": ssh_keys(),  
-                  "client_public_ip": client_public_ip(), 
-                  'run_os_commands': run_os_commands(), 
-                  'get_headers': get_headers()
-      }
+      ## menu_list = {"wg_keys": wg_keys(), 
+      ##             "ssh_keys": ssh_keys(),  
+      ##             "client_public_ip": client_public_ip(), 
+      ##             'run_os_commands': run_os_commands(), 
+      ##             'get_headers': get_headers()
+      ## }
 
       public_menu = ["client_public_ip"]
       admin_menu  = ["wg_keys", "ssh_keys"]
@@ -138,7 +138,6 @@ def menu():
                   menu_icon = "gear",
                   #default_index=0
             )
-            st.write(mn_list)
             st.write(f"{selected} is selected..")
       #menu_list[selected]
 
