@@ -12,6 +12,7 @@ def menu():
 
       opt = st.selectbox([0,1,2])
       st.title(f"{opt} is selected..")
+      
       with st.sidebar:
             selected = option_menu(None,  mn.keys(), 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
