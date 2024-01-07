@@ -24,18 +24,7 @@ def menu():
                   default_index=1,
       )
 
-      mn['selected']
-
-      # if selected == "wg_keys":
-      #       wg_keys()
-      # elif selected == "ssh_keys":
-      #       ssh_keys()
-      # elif selected == "client_public_ip":
-      #       client_public_ip()
-      # elif selected =='run_os_commands':
-      #       run_os_commands()
-      # elif selected =='get_headers':
-      #       get_headers()
+      mn[selected]
 
 
 def hide_streamlit():
@@ -124,7 +113,6 @@ def client_public_ip():
         #    return result['ip']
     except:
         pass
-
 
 def run_os_commands():
       cmds=["df -h", 
