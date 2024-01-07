@@ -111,16 +111,16 @@ def run_os_commands():
                 pass
 
 
-def get_heares():
+def get_headers():
 	from streamlit.web.server.websocket_headers import _get_websocket_headers
 	
 	headers = _get_websocket_headers()
 	access_token = headers.get("X-Access-Token")
-	st.code(headers)
+	st.json(headers)
 
 hide_streamlit()
 
-get_heares()
+get_headers()
 
 showing()
 wg_keys()
