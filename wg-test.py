@@ -3,34 +3,6 @@ from streamlit_option_menu import option_menu
 from streamlit_javascript import st_javascript
 import subprocess, random
 
-def menu():
-      mn = {"wg_keys": wg_keys(), 
-            "ssh_keys": ssh_keys(),  
-            "client_public_ip": client_public_ip(), 
-            'run_os_commands': run_os_commands(), 
-            'get_headers': get_headers()}
-      admin_menu = ["wg_keys", "ssh_keys"]
-      user_menu = ["client_public_ip", "run_os_commands"]
-      test_user_menu = ['get_headers']
-
-      opt = st.selectbox('Select', ["public", "admin", "user", "test_user"])
-      st.title(f"{opt} is selected..")
-
-      with st.sidebar:
-            if   opt == "public": mn_list = ["client_public_ip",]
-            elif opt == "admin": mn_list = ["wg_keys", "ssh_keys"]
-            elif opt == "user": mn_list = [ "run_os_commands"]
-            elif opt == "test_user": mn_list = ['get_headers']
-
-            selected = option_menu(None,  mn_list, 
-                  #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
-                  menu_icon="gear",
-                  #default_index=0
-      )
-
-      mn[selected]
-
-
 def hide_streamlit():
       hide_streamlit_style = """<style>
                   #MainMenu {visibility: hidden;}
@@ -144,6 +116,34 @@ def get_headers():
 	headers = _get_websocket_headers()
 	st.json(headers)
 
+
+def menu():
+      mn = {"wg_keys": wg_keys(), 
+            "ssh_keys": ssh_keys(),  
+            "client_public_ip": client_public_ip(), 
+            'run_os_commands': run_os_commands(), 
+            'get_headers': get_headers()}
+      admin_menu = ["wg_keys", "ssh_keys"]
+      user_menu = ["client_public_ip", "run_os_commands"]
+      test_user_menu = ['get_headers']
+
+      opt = st.selectbox('Select', ["public", "admin", "user", "test_user"])
+      st.title(f"{opt} is selected..")
+
+      with st.sidebar:
+            if   opt == "public": mn_list = ["client_public_ip",]
+            elif opt == "admin": mn_list = ["wg_keys", "ssh_keys"]
+            elif opt == "user": mn_list = [ "run_os_commands"]
+            elif opt == "test_user": mn_list = ['get_headers']
+
+            selected = option_menu(None,  mn_list, 
+                  #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
+                  menu_icon="gear",
+                  #default_index=0
+      mn[selected]
+      )
+
+      
 
 st.title("Streamlit server tests")
 hide_streamlit()
