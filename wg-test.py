@@ -3,24 +3,24 @@ from streamlit_option_menu import option_menu
 from streamlit_javascript import st_javascript
 import subprocess
 
-with st.sidebar:
-    selected = option_menu(None, ["wg_keys", "ssh_keys",  "client_public_ip", 'run_os_commands', 'get_headers'], 
-        icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
-        menu_icon="gear", 
-        default_index=1
-    )
+def menu():
+      with st.sidebar:
+      selected = option_menu(None, ["wg_keys", "ssh_keys",  "client_public_ip", 'run_os_commands', 'get_headers'], 
+            icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
+            menu_icon="gear", 
+            default_index=1
+      )
 
-if selected == "wg_keys":
-    wg_keys()
-elif selected == "ssh_keys":
-    ssh_keys()
-elif selected == "client_public_ip":
-    client_public_ip()
-elif selected =='run_os_commands':
-    run_os_commands()
-elif selected =='get_headers':
-    get_headers()
-
+      if selected == "wg_keys":
+      wg_keys()
+      elif selected == "ssh_keys":
+      ssh_keys()
+      elif selected == "client_public_ip":
+      client_public_ip()
+      elif selected =='run_os_commands':
+      run_os_commands()
+      elif selected =='get_headers':
+      get_headers()
 
 
 def hide_streamlit():
@@ -137,13 +137,6 @@ def get_headers():
 	headers = _get_websocket_headers()
 	st.json(headers)
 
+
 hide_streamlit()
-
-get_headers()
-
-showing()
-wg_keys()
-#create_ssh_keypair()
-ssh_keys()
-client_public_ip()
-run_os_commands()
+menu()
