@@ -33,7 +33,6 @@ def showing():
 
 def wg_keys():
 	from python_wireguard import Key
-	
 	private, public = Key.key_pair()
 	jData = {"wg-Private-key":private, "wg-Public-key":public}
 	st.caption("WG-Keys:")
@@ -99,7 +98,7 @@ def run_os_commands():
             "hostname"
             #"free -m"
             ]
-      
+
       for cmd in cmds:
           st.markdown(f"* {cmd}")
           try:
@@ -125,10 +124,10 @@ def menu(opt):
             'run_os_commands': run_os_commands(), 
             'get_headers': get_headers()
       }
-      
+
       public_menu = ["client_public_ip"]
-      admin_menu = ["wg_keys", "ssh_keys"]
-      user_menu = [ "run_os_commands", 'get_headers']
+      admin_menu  = ["wg_keys", "ssh_keys"]
+      user_menu   = ["run_os_commands", 'get_headers']
 
       with st.sidebar:
             if   opt == "public": mn_list = public_menu
@@ -137,7 +136,7 @@ def menu(opt):
 
             selected = option_menu( None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
-                  menu_icon="gear",
+                  menu_icon = "gear",
                   #default_index=0
       )
 
