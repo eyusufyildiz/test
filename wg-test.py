@@ -13,12 +13,13 @@ def menu():
       user_menu = ["client_public_ip", "run_os_commands"]
       test_user_menu = ['get_headers']
 
-      opt = st.selectbox('Select', ["admin", "user", "test_user"])
+      opt = st.selectbox('Select', ["public", "admin", "user", "test_user"])
       st.title(f"{opt} is selected..")
 
       with st.sidebar:
-            if   opt == "admin": mn_list = ["wg_keys", "ssh_keys"]
-            elif opt == "user": mn_list = ["client_public_ip", "run_os_commands"]
+            if   opt == "public": mn_list = ["client_public_ip",]
+            elif opt == "admin": mn_list = ["wg_keys", "ssh_keys"]
+            elif opt == "user": mn_list = [ "run_os_commands"]
             elif opt == "test_user": mn_list = ['get_headers']
 
             selected = option_menu(None,  mn_list, 
