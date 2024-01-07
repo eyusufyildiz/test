@@ -138,5 +138,6 @@ def get_headers():
 	st.json(headers)
 
 
+st.caption("Streamlit server tests")
 hide_streamlit()
 menu()
