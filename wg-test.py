@@ -117,7 +117,7 @@ def get_headers():
 	ctx = st.runtime.scriptrunner.get_script_run_ctx()
 	ipAddr = ctx.user_agent.ip
 	headers = _get_websocket_headers()
-	headers["ipAddr"]= headers
+	st.write(ipAddr)
 	st.json(headers)
 
 hide_streamlit()
