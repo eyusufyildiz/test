@@ -8,19 +8,19 @@ def menu():
       selected = option_menu(None, ["wg_keys", "ssh_keys",  "client_public_ip", 'run_os_commands', 'get_headers'], 
             icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
             menu_icon="gear", 
-            default_index=1
+            default_index=1,
       )
 
       if selected == "wg_keys":
-      wg_keys()
+            wg_keys()
       elif selected == "ssh_keys":
-      ssh_keys()
+            ssh_keys()
       elif selected == "client_public_ip":
-      client_public_ip()
+            client_public_ip()
       elif selected =='run_os_commands':
-      run_os_commands()
+            run_os_commands()
       elif selected =='get_headers':
-      get_headers()
+            get_headers()
 
 
 def hide_streamlit():
