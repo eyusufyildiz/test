@@ -1,15 +1,19 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_javascript import st_javascript
-import subprocess
+import subprocess, random
 
 def menu():
+      
       with st.sidebar:
             selected = option_menu(None, ["wg_keys", "ssh_keys",  "client_public_ip", 'run_os_commands', 'get_headers'], 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon="gear", 
                   default_index=1,
       )
+
+      ran_num = random.randint(0,10)
+      st.header(ran_num)
 
       if selected == "wg_keys":
             wg_keys()
