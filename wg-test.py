@@ -12,15 +12,20 @@ def menu():
 
       opt = st.selectbox([0,1,2])
       st.title(f"{opt} is selected..")
-      
+
       with st.sidebar:
-            selected = option_menu(None,  mn.keys(), 
+            if   opt == 0: mn_list = ["wg_keys", "ssh_keys"]
+            elif opt == 1: mn_list = ["client_public_ip" "run_os_commands"]
+            elif opt == 2: mn_list = ['get_headers']
+
+            selected = option_menu(None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon="gear", 
                   default_index=1,
       )
 
-            
+      mn['selected']
+      
       # if selected == "wg_keys":
       #       wg_keys()
       # elif selected == "ssh_keys":
