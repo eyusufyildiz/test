@@ -12,7 +12,7 @@ def menu():
                   default_index=1,
       )
 
-      ran_num = random.randint(0,10)
+      ran_num = random.randint(0,1)
       st.header(ran_num)
 
       if selected == "wg_keys":
