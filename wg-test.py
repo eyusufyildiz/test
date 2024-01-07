@@ -113,9 +113,11 @@ def run_os_commands():
 
 def get_headers():
 	from streamlit.web.server.websocket_headers import _get_websocket_headers
-	
+
+	ctx = st.runtime.scriptrunner.get_script_run_ctx()
+	ipAddr = ctx.user_agent.ip
 	headers = _get_websocket_headers()
-	access_token = headers.get("X-Access-Token")
+	headers("ipAddr": headers)
 	st.json(headers)
 
 hide_streamlit()
