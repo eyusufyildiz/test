@@ -1,4 +1,5 @@
 streamlit
 streamlit_javascript
+streamlit-javascript
 python_wireguard
 paramiko
