@@ -138,7 +138,7 @@ def menu():
                   menu_icon = "gear",
                   #default_index=0
             )
-      st.write(f"{selected} is selected..")
+            st.write(f"{selected} is selected..")
       menu_list[selected]
 
 st.title("Streamlit server tests:")
