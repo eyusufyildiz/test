@@ -23,7 +23,7 @@ def menu():
 
             selected = option_menu(None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
-                  menu_icon="gear"
+                  menu_icon="gear",
                   default_index=3
       )
 
