@@ -112,17 +112,16 @@ def get_headers():
 	headers = _get_websocket_headers()
 	st.json(headers)
 
-def selection():
+
+def menu():
       opt = st.selectbox('--> Select', ["public", "admin", "user"])
       st.title(f"{opt} is selected..")
-      menu(opt)
 
-def menu(opt):
       menu_list = {"wg_keys": wg_keys(), 
-            "ssh_keys": ssh_keys(),  
-            "client_public_ip": client_public_ip(), 
-            'run_os_commands': run_os_commands(), 
-            'get_headers': get_headers()
+                  "ssh_keys": ssh_keys(),  
+                  "client_public_ip": client_public_ip(), 
+                  'run_os_commands': run_os_commands(), 
+                  'get_headers': get_headers()
       }
 
       public_menu = ["client_public_ip"]
@@ -140,9 +139,9 @@ def menu(opt):
                   #default_index=0
       )
 
-      #st.code( menu_list[selected] )
+      st.code( menu_list[selected] )
 
 
 st.title("Streamlit server tests")
 hide_streamlit()
-selection()
+#menu()
