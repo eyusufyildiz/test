@@ -15,13 +15,13 @@ def menu():
 
       with st.sidebar:
             if   opt == 1: mn_list = ["wg_keys", "ssh_keys"]
-            elif opt == 2: mn_list = ["client_public_ip" "run_os_commands"]
+            elif opt == 2: mn_list = ["client_public_ip", "run_os_commands"]
             elif opt == 3: mn_list = ['get_headers']
 
             selected = option_menu(None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon="gear", 
-                  #default_index=1,
+                  default_index=3,
       )
 
       mn[selected]
