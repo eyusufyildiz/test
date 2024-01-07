@@ -6,7 +6,7 @@ import subprocess
 def menu():
       with st.sidebar:
             selected = option_menu(None, ["wg_keys", "ssh_keys",  "client_public_ip", 'run_os_commands', 'get_headers'], 
-                  icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
+                  #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon="gear", 
                   default_index=1,
       )
