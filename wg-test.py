@@ -139,7 +139,7 @@ def menu():
                   #default_index=0
             )
 
-            st.code( menu_list[selected] )
+            menu_list[selected]
 
 
 st.title("Streamlit server tests:")
