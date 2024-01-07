@@ -113,11 +113,16 @@ def run_os_commands():
 
 def get_headers():
 	from streamlit.web.server.websocket_headers import _get_websocket_headers
+	import streamlit.javascript as js
+	"""Get the client IP address."""
+	js_code = """const ip = window.location.hostname;
+		     return ip;"""
+	client_ip = js.eval_script(js_code)
 
 	ctx = st.runtime.scriptrunner.get_script_run_ctx()
 	ipAddr = ctx.user_agent.ip
 	headers = _get_websocket_headers()
-	st.write(ipAddr)
+	headers["client_ip"] = client_ip
 	st.json(headers)
 
 hide_streamlit()
