@@ -96,7 +96,7 @@ def ssh_keys():
 def client_public_ip():
     url = 'https://ifconfig.me/all.json'
     # url = 'https://api.ipify.org?format=json'
-    st.caption("IP Headers:")
+    st.caption(url)
     script = (f'await fetch("{url}").then('
                 'function(response) {'
                     'return response.json();'
