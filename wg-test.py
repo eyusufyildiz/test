@@ -4,27 +4,32 @@ from streamlit_javascript import st_javascript
 import subprocess, random
 
 def menu():
-      
+      mn = {"wg_keys": wg_keys(), 
+            "ssh_keys": ssh_keys(),  
+            "client_public_ip": client_public_ip(), 
+            'run_os_commands': run_os_commands(), 
+            'get_headers': get_headers()}
+
+      opt = st.selectbox([0,1,2])
+      st.title(f"{opt} is selected..")
       with st.sidebar:
-            selected = option_menu(None, ["wg_keys", "ssh_keys",  "client_public_ip", 'run_os_commands', 'get_headers'], 
+            selected = option_menu(None,  mn.keys(), 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon="gear", 
                   default_index=1,
       )
 
-      ran_num = random.randint(0,1)
-      st.header(ran_num)
-
-      if selected == "wg_keys":
-            wg_keys()
-      elif selected == "ssh_keys":
-            ssh_keys()
-      elif selected == "client_public_ip":
-            client_public_ip()
-      elif selected =='run_os_commands':
-            run_os_commands()
-      elif selected =='get_headers':
-            get_headers()
+            
+      # if selected == "wg_keys":
+      #       wg_keys()
+      # elif selected == "ssh_keys":
+      #       ssh_keys()
+      # elif selected == "client_public_ip":
+      #       client_public_ip()
+      # elif selected =='run_os_commands':
+      #       run_os_commands()
+      # elif selected =='get_headers':
+      #       get_headers()
 
 
 def hide_streamlit():
