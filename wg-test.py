@@ -118,7 +118,7 @@ def get_headers():
 
 
 def selection():
-      opt = st.selectbox('Select', ["public", "admin", "user", "test_user"])
+      opt = st.selectbox('--> Select', ["public", "admin", "user"])
       st.title(f"{opt} is selected..")
       menu(opt)
 
@@ -131,14 +131,12 @@ def menu(opt):
       
       public_menu = ["client_public_ip"]
       admin_menu = ["wg_keys", "ssh_keys"]
-      user_menu = [ "run_os_commands"]
-      test_user_menu = ['get_headers']
+      user_menu = [ "run_os_commands", 'get_headers']
 
       with st.sidebar:
             if   opt == "public": mn_list = public_menu
             elif opt == "admin": mn_list = admin_menu
             elif opt == "user": mn_list = user_menu
-            elif opt == "test_user": mn_list = test_user_menu
 
             selected = option_menu(None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
