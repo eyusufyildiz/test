@@ -133,15 +133,15 @@ def menu():
             elif opt == "admin": mn_list = admin_menu
             elif opt == "user": mn_list = user_menu
 
-            selected = option_menu( None,  mn_list, 
+            selected = option_menu(None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon = "gear",
                   #default_index=0
-      )
+            )
 
-      st.code( menu_list[selected] )
+            st.code( menu_list[selected] )
 
 
-st.title("Streamlit server tests")
+st.title("Streamlit server tests:")
 hide_streamlit()
-#menu()
+menu()
