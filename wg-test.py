@@ -19,7 +19,6 @@ def hide_streamlit():
             </style>"""
       st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
-
 def showing():
       col1, col2, col3 = st.columns(3)
       with col1:
@@ -39,7 +38,6 @@ def wg_keys():
 	jData = {"wg-Private-key":private, "wg-Public-key":public}
 	st.caption("WG-Keys:")
 	st.json( jData )
-
 
 def ssh_keys():
 	import paramiko, os
@@ -110,12 +108,10 @@ def run_os_commands():
           except:
                 pass
 
-
 def get_headers():
 	from streamlit.web.server.websocket_headers import _get_websocket_headers
 	headers = _get_websocket_headers()
 	st.json(headers)
-
 
 def selection():
       opt = st.selectbox('--> Select', ["public", "admin", "user"])
@@ -127,7 +123,8 @@ def menu(opt):
             "ssh_keys": ssh_keys(),  
             "client_public_ip": client_public_ip(), 
             'run_os_commands': run_os_commands(), 
-            'get_headers': get_headers()}
+            'get_headers': get_headers()
+      }
       
       public_menu = ["client_public_ip"]
       admin_menu = ["wg_keys", "ssh_keys"]
@@ -138,7 +135,7 @@ def menu(opt):
             elif opt == "admin": mn_list = admin_menu
             elif opt == "user": mn_list = user_menu
 
-            selected = option_menu(None,  mn_list, 
+            selected = option_menu( None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
                   menu_icon="gear",
                   #default_index=0
