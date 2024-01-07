@@ -138,6 +138,7 @@ def menu():
                   menu_icon = "gear",
                   #default_index=0
             )
+            st.write(mn_list)
             st.write(f"{selected} is selected..")
       #menu_list[selected]
 
