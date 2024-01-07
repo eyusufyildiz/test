@@ -10,13 +10,13 @@ def menu():
             'run_os_commands': run_os_commands(), 
             'get_headers': get_headers()}
 
-      opt = st.selectbox([0,1,2])
+      opt = st.selectbox('Select', [1,2,3])
       st.title(f"{opt} is selected..")
 
       with st.sidebar:
-            if   opt == 0: mn_list = ["wg_keys", "ssh_keys"]
-            elif opt == 1: mn_list = ["client_public_ip" "run_os_commands"]
-            elif opt == 2: mn_list = ['get_headers']
+            if   opt == 1: mn_list = ["wg_keys", "ssh_keys"]
+            elif opt == 2: mn_list = ["client_public_ip" "run_os_commands"]
+            elif opt == 3: mn_list = ['get_headers']
 
             selected = option_menu(None,  mn_list, 
                   #icons=['geo-alt', 'cloud-upload', "list-task", 'gear', 'broadcast-pin'], 
@@ -25,7 +25,7 @@ def menu():
       )
 
       mn['selected']
-      
+
       # if selected == "wg_keys":
       #       wg_keys()
       # elif selected == "ssh_keys":
