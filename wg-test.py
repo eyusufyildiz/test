@@ -132,12 +132,14 @@ def menu():
                   #default_index=0
             )
 
-            if selected == "wg_keys": wg_keys()
-            elif selected == "ssh_keys": ssh_keys()
-            elif selected == "client_public_ip": client_public_ip()
-            elif selected == 'run_os_commands': run_os_commands()
-            elif selected == 'get_headers': get_headers()
-            
+      if selected == "wg_keys": wg_keys()
+
+      
+      elif selected == "ssh_keys": ssh_keys()
+      elif selected == "client_public_ip": client_public_ip()
+      elif selected == 'run_os_commands': run_os_commands()
+      elif selected == 'get_headers': get_headers()
+      
 
 st.title("Streamlit server tests:")
 hide_streamlit()
