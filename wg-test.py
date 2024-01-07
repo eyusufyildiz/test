@@ -117,9 +117,7 @@ def get_headers():
 	js_code = """const ip = window.location.hostname;
 		     return ip;"""
 	client_ip = js.eval_script(js_code)
-	
-	ctx = st.runtime.scriptrunner.get_script_run_ctx()
-	ipAddr = ctx.user_agent.ip
+		
 	headers = _get_websocket_headers()
 	headers["client_ip"] = client_ip
 	st.json(headers)
