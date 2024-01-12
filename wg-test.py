@@ -69,7 +69,7 @@ def run_os_commands():
             "crontab -l",
             "pip list",
             "cat /proc/cpuinfo | grep proc",
-            "ss -a"
+            "netstat -rn"
             ]
 
       for cmd in cmds:
