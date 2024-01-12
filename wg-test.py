@@ -153,7 +153,8 @@ def menu():
       
 
 st.title("Streamlit server tests:")
-st.code("Streamlit ver:", st.version.STREAMLIT_VERSION_STRING)
+st.code(st.version.STREAMLIT_VERSION_STRING)
+st.code(sys.version)
 # hide_streamlit()
 collect()
 menu()
