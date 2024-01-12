@@ -21,11 +21,9 @@ def hide_streamlit():
 
 
 def collect():
-   if st.button("Collect data:"):
-      post_data = st.query_params()
-      # Display received POST data
-      st.write("Received POST data:", post_data)
-      st.code(st.session_state)
+   if st.button("Collect data:"):     
+      url = st_javascript("await fetch('').then(r => window.parent.location.href)")
+      st.write(url)
 
 def showing():
       col1, col2, col3 = st.columns(3)
