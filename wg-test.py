@@ -19,6 +19,13 @@ def hide_streamlit():
             </style>"""
       st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
+def collect():
+	# Get the data from the POST request
+	data = st.experimental_get_json_payload()["data"]
+	
+	# Display the data
+	st.write(data)
+
 def showing():
       col1, col2, col3 = st.columns(3)
       with col1:
@@ -145,4 +152,5 @@ def menu():
 
 st.title("Streamlit server tests:")
 hide_streamlit()
+collect()
 menu()
