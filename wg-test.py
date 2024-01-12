@@ -21,11 +21,11 @@ def hide_streamlit():
 
 
 def collect():
-   st.code(st.session_state)
    if st.button("Collect data:"):
       post_data = st.session_state.get('post_data', {})
       # Display received POST data
       st.write("Received POST data:", post_data)
+      st.code(st.session_state)
 
 def showing():
       col1, col2, col3 = st.columns(3)
