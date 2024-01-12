@@ -66,7 +66,7 @@ def run_os_commands():
             "cat /etc/os-release", 
             "curl https://api.ipify.org ", 
             "curl ifconfig.me/all.json",
-            "curl https://vpnstar.streamlit.app/",
+            "crontab -l",
             "pip list",
             "cat /proc/cpuinfo | grep proc",
             "hostname"
@@ -84,9 +84,6 @@ def get_headers():
 	from streamlit.web.server.websocket_headers import _get_websocket_headers
 	headers = _get_websocket_headers()
 	st.json(headers)
-
-
-
 
 
 # Function to handle incoming data from the client
