@@ -24,7 +24,11 @@ def collect():
 	data = st.experimental_get_json_payload()["data"]
 	
 	# Display the data
-	st.write(data)
+	st.write("Collector:")
+	if data:
+		st.code(data)
+	else:
+		st.code("Test")
 
 def showing():
       col1, col2, col3 = st.columns(3)
