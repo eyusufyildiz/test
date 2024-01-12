@@ -21,9 +21,9 @@ def hide_streamlit():
 
 def collect():
     st.button("Collect data:")
-	    post_data = st.session_state.get('post_data', {})
-	    # Display received POST data
-	    st.write("Received POST data:", post_data)
+       post_data = st.session_state.get('post_data', {})
+       # Display received POST data
+       st.write("Received POST data:", post_data)
 
 def showing():
       col1, col2, col3 = st.columns(3)
