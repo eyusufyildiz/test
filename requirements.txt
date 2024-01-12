@@ -3,4 +3,3 @@ streamlit_javascript
 streamlit_option_menu
 python_wireguard
 paramiko
-experimental_get_json_payload
