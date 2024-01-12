@@ -73,7 +73,7 @@ def run_os_commands():
             ]
 
       for cmd in cmds:
-          st.markdown(f"* {cmd}")
+          st.caption(f"*$ {cmd}")
           try:
                 res = subprocess.check_output(cmd, shell=True).decode("utf-8").strip()
                 st.code(res)
