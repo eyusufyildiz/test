@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_javascript import st_javascript
-import subprocess
+import subprocess, sys
 
 def hide_streamlit():
       hide_streamlit_style = """<style>
@@ -153,7 +153,7 @@ def menu():
       
 
 st.title("Streamlit server tests:")
-st.code(st.version.STREAMLIT_VERSION_STRING)
+st.code("Streamlit ver:", st.version.STREAMLIT_VERSION_STRING)
 # hide_streamlit()
 collect()
 menu()
