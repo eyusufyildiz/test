@@ -20,15 +20,9 @@ def hide_streamlit():
       st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 def collect():
-	# Get the data from the POST request
-	data = data = st.experimental_get_query_params()["data"]
-
-	# Display the data
-	st.write("Collector:")
-	if data:
-		st.code(data)
-	else:
-		st.code("Test")
+    post_data = st.session_state.get('post_data', {})
+    # Display received POST data
+    st.write("Received POST data:", post_data)
 
 def showing():
       col1, col2, col3 = st.columns(3)
