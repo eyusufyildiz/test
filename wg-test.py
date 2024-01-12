@@ -32,7 +32,6 @@ def showing():
       col1, col2, col3 = st.columns(3)
       with col1:
             if st.button("Baloons"):
-                  st.code(st.version.STREAMLIT_VERSION_STRING)
                   st.balloons()
       with col2:
             if st.button("snow"):
@@ -154,6 +153,7 @@ def menu():
       
 
 st.title("Streamlit server tests:")
+st.code(st.version.STREAMLIT_VERSION_STRING)
 # hide_streamlit()
 collect()
 menu()
