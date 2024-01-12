@@ -23,10 +23,10 @@ def hide_streamlit():
 def collect():
    if st.button("Collect data:"):
       # Get the query parameters
-      query_params = st.query_params
+      qp = st.query_params()
 
       # Display the query parameters
-      st.write("Query Parameters:", query_params)
+      st.write("Query Parameters:", qp)
 
       # Access specific query parameters
       param_value = query_params.get("param_name", "default_value")
