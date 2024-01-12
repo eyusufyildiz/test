@@ -158,6 +158,6 @@ def menu():
       
 
 st.title("Streamlit server tests:")
-hide_streamlit()
+# hide_streamlit()
 collect()
 menu()
