@@ -32,6 +32,7 @@ def collect():
       param_value = query_params.get("param_name", "default_value")
       st.write("Value of 'param_name':", param_value)
 
+
 def showing():
       col1, col2, col3 = st.columns(3)
       with col1:
