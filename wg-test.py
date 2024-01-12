@@ -32,12 +32,13 @@ def showing():
                   st.toast('Berkehan & Bilge')
 
 def wg_keys():
-	from python_wireguard import Key
-	private, public = Key.key_pair()
-	jData = {"wg-Private-key":private, "wg-Public-key":public}
-	st.caption("WG-Keys:")
-	st.json( jData )
-      st.write( str(private), str(public ) ) 
+      from python_wireguard import Key
+      private, public = Key.key_pair()
+      jData = {"wg-Private-key":private, "wg-Public-key":public}
+      st.caption("WG-Keys:")
+      st.json( jData )
+      st.code( str(private) )
+      st.code( str(public ) )
 
 def ssh_keys():
 	import paramiko, os
