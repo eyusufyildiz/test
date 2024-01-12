@@ -21,8 +21,8 @@ def hide_streamlit():
 
 def collect():
 	# Get the data from the POST request
-	data = st.experimental_get_json_payload()["data"]
-	
+	data = data = st.experimental_get_query_params()["data"]
+
 	# Display the data
 	st.write("Collector:")
 	if data:
