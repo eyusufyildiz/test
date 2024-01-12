@@ -22,8 +22,15 @@ def hide_streamlit():
 
 def collect():
    if st.button("Collect data:"):     
-      url = st_javascript("await fetch('').then(r => window.parent.location.href)")
-      st.write(url)
+      # Get the query parameters
+      query_params = st.query_params()
+
+      # Display the query parameters
+      st.write("Query Parameters:", query_params)
+
+      # Access specific query parameters
+      param_value = query_params.get("param_name", "default_value")
+      st.write("Value of 'param_name':", param_value)
 
 def showing():
       col1, col2, col3 = st.columns(3)
