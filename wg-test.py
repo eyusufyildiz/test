@@ -66,10 +66,8 @@ def run_os_commands():
             "cat /etc/os-release", 
             "curl https://api.ipify.org ", 
             "curl ifconfig.me/all.json",
-            "crontab -l",
             "pip list",
             "cat /proc/cpuinfo | grep proc",
-            "netstat -rn"
             ]
 
       for cmd in cmds:
