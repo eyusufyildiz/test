@@ -120,6 +120,7 @@ def start_server(host, port):
 
 
 def tb1():
+    import pandas as pd
     data_df = pd.DataFrame(
         {
             "category": [
