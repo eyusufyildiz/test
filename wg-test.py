@@ -141,8 +141,9 @@ def tbl_test():
 	        ),
 	        "url": st.column_config.LinkColumn("Application URL"),
 	        "views_history": st.column_config.LineChartColumn(
-		     help="SOn ziyaretler",
-	            "Views (past 30 days)", y_min=0, y_max=5000
+	            "Views (past 30 days)", 
+		     help="Son ziyaretler", 
+		     y_min=0, y_max=5000
 	        ),
 	    },
 	    hide_index=True,
