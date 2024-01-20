@@ -140,9 +140,9 @@ def tb1():
                 help="The category of the app",
                 width="medium",
                 options=[
-                    "📊 Data Exploration",
-                    "📈 Data Visualization",
-                    "🤖 LLM",
+                    "📊 Sec1",
+                    "📈 Sec2",
+                    "🤖 Sec3",
                 ],
                 required=True,
             )
