@@ -133,7 +133,7 @@ def tbl_test():
                     "https://issues.streamlit.app"],
 	        "stars": [random.randint(0, 1000) for _ in range(3)],
 	        "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
-            "Secim": [ ["sec1", "Sec2", "Sec3"], ["sec1", "Sec2", "Sec3"], ["sec1", "Sec2", "Sec3"] ]
+            "Secim": ""
 	    }
 	)
 	st.dataframe(
@@ -153,7 +153,8 @@ def tbl_test():
 	        ),
             "Secim": st.column_config.SelectboxColumn(
 	            "Secimler",
-	            help = "Secekeler, sec birisini",
+	            help = "Secenekler, sec birisini",
+                 option=["sec1", "Sec2", "Sec3"]
 	        ),
 	    },
 	    hide_index=True,
