@@ -146,7 +146,7 @@ def tbl_test():
 		     y_min=0, y_max=5000
 	        ),
 	    },
-	    # hide_index=True,
+	    hide_index=True,
 	)	
 
 
