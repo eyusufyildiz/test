@@ -118,6 +118,9 @@ def start_server(host, port):
         client_handler.start()
 
 
+
+
+
 def tbl_test():
 	import random
 	import pandas as pd
@@ -125,9 +128,12 @@ def tbl_test():
 	df = pd.DataFrame(
 	    {
 	        "name": ["Roadmap", "Extras", "Issues"],
-	        "url": ["https://roadmap.streamlit.app", "https://extras.streamlit.app", "https://issues.streamlit.app"],
+	        "url": ["https://roadmap.streamlit.app", 
+                    "https://extras.streamlit.app", 
+                    "https://issues.streamlit.app"],
 	        "stars": [random.randint(0, 1000) for _ in range(3)],
 	        "views_history": [[random.randint(0, 5000) for _ in range(30)] for _ in range(3)],
+            "Secim": ["sec1", "Sec2", "Sec3"]
 	    }
 	)
 	st.dataframe(
@@ -136,18 +142,24 @@ def tbl_test():
 	        "name": "App name",
 	        "stars": st.column_config.NumberColumn(
 	            "Github Stars",
-	            help="Number of stars on GitHub",
-	            format="%d ⭐",
+	            help = "Number of stars on GitHub",
+	            format = "%d ⭐",
 	        ),
 	        "url": st.column_config.LinkColumn("Application URL"),
 	        "views_history": st.column_config.LineChartColumn(
 	            "Views (past 30 days)", 
-		     help="Son ziyaretler", 
-		     y_min=0, y_max=5000
+		        help="Son ziyaretler", 
+		        y_min=0, y_max=5000
+	        ),
+            "Secim": st.column_config.SelectboxColumn(
+	            "Secimler",
+	            help = "Secekeler, sec birisini",
 	        ),
 	    },
 	    hide_index=True,
 	)	
+
+
 
 
 st.title("Streamlit server tests:")
@@ -178,4 +190,3 @@ with st.expander("Start Collector"):
       # Start the server when the user clicks the button
       if st.button("Start Server"):
             start_server("localhost", int(5000))
-
