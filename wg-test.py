@@ -154,7 +154,13 @@ def tbl_test():
             "Secim": st.column_config.SelectboxColumn(
 	            "Secimler",
 	            help = "Secenekler, sec birisini",
-                 option=["sec1", "Sec2", "Sec3"]
+                width="medium",
+>>>             options=[
+>>>                 "📊 Data Exploration",
+>>>                 "📈 Data Visualization",
+>>>                 "🤖 LLM",
+>>>             ],
+>>>             required=True,
 	        ),
 	    },
 	    hide_index=True,
