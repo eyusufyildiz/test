@@ -119,6 +119,35 @@ def start_server(host, port):
 
 
 
+def tb1():
+    data_df = pd.DataFrame(
+        {
+            "category": [
+                "📊 Data Exploration",
+                "📈 Data Visualization",
+                "🤖 LLM",
+                "📊 Data Exploration",
+            ],
+        }
+    )
+
+    st.data_editor(
+        data_df,
+        column_config={
+            "category": st.column_config.SelectboxColumn(
+                "App Category",
+                help="The category of the app",
+                width="medium",
+                options=[
+                    "📊 Data Exploration",
+                    "📈 Data Visualization",
+                    "🤖 LLM",
+                ],
+                required=True,
+            )
+        },
+        hide_index=True,
+    )
 
 
 def tbl_test():
@@ -154,8 +183,8 @@ def tbl_test():
             "Secim": st.column_config.SelectboxColumn(
 	            "Secimler",
 	            help = "Secenekler, sec birisini",
-                width="medium",
-                options=[
+                width = "medium",
+                options = [
                     "📊 Data Exploration",
                     "📈 Data Visualization",
                     "🤖 LLM",
@@ -174,9 +203,13 @@ st.code(st.version.STREAMLIT_VERSION_STRING)
 st.code(sys.version)
 # hide_streamlit()
 
+
+
+with st.expander("tb1"):
+     tb1()
+
 with st.expander("Table-test"):
     tbl_test()
-
 
 with st.expander("Collector"):
     collect()
