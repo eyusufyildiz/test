@@ -155,12 +155,12 @@ def tbl_test():
 	            "Secimler",
 	            help = "Secenekler, sec birisini",
                 width="medium",
->>>             options=[
->>>                 "📊 Data Exploration",
->>>                 "📈 Data Visualization",
->>>                 "🤖 LLM",
->>>             ],
->>>             required=True,
+                options=[
+                    "📊 Data Exploration",
+                    "📈 Data Visualization",
+                    "🤖 LLM",
+                ],
+                required=True,
 	        ),
 	    },
 	    hide_index=True,
