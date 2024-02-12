@@ -8,7 +8,7 @@ def menu_exm():
 	    selection = st.session_state[key]
 	    st.write(f"Selection changed to {selection}")
 	    
-	selected5 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'],
+	selected5 = option_menu("house", ["Home", "Upload", "Tasks", 'Settings'],
 	                        icons=['house', 'cloud-upload', "list-task", 'gear'],
 	                        on_change=on_change, key='menu_5', orientation="horizontal")
 	selected5
