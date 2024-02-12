@@ -14,6 +14,6 @@ def menu_exp(idx):
 	selected5
 	idx
 		
-sl = st.selectbox('Select', [0,1,2,3])
+sl = st.selectbox('Select', ["Home", "Upload", "Tasks", 'Settings'] )
 menu_exp(sl)
 st.write("----")
