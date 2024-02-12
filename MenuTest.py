@@ -11,5 +11,5 @@ def menu(idx=0):
 	else:
 	    st.write("settings is my bettings")
 
-sl = ["SEC", [0,1]]
+sl = st.selectbox('Select', [0, 1])
 menu(sl)
