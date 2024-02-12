@@ -1,19 +1,15 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-# https://github.com/victoryhb/streamlit-option-menu
-def menu_exp():
-	# 5. Add on_change callback
-	def on_change(key):
-	    selection = st.session_state[key]
-	    st.write(f"Selection changed to {selection}")
+def menu(idx=0):
+	with st.sidebar:
+	    selected = option_menu("Menu", ["Home", 'Settings'], 
+	        icons=['house', 'gear'], default_index=idx)
 	
-	selected5 = option_menu("Welcome", ["Home", "Upload", "Tasks", 'Settings'],
-				icons=['house', 'cloud-upload', "list-task", 'gear'],
-				on_change=on_change, default_index=idx, key=key, orientation="horizontal")
-	selected5
-	idx
-		
-kk = st.selectbox('Select', [0,1,2,3] )
-menu_exp(kk)
-st.write("----")
+	if selected == "Home":
+	    st.write("home is where the heart is")
+	else:
+	    st.write("settings is my bettings")
+
+sl = ["SEC", [0,1]]
+menu(sl)
