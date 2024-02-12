@@ -4,7 +4,7 @@ from streamlit_option_menu import option_menu
 # https://github.com/victoryhb/streamlit-option-menu
 def menu_exm(idx):
 	# 5. Add on_change callback
-	def on_change(key):
+	def on_change(key, idx):
 	    selection = st.session_state[key]
 	    st.write(f"Selection changed to {selection}")
 
