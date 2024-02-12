@@ -13,3 +13,7 @@ def menu_exm():
 	                        on_change=on_change, key='menu_5', orientation="horizontal")
 	selected5
 	
+
+menu_exm()
+
+st.write("----")
