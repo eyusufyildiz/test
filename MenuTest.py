@@ -15,6 +15,7 @@ def menu_exm(idx):
 	idx
 	
 selected = st.selectbox('Select', [0,1,2,3])
-menu_exm(selected)
+if selected:
+    menu_exm(selected)
 
 st.write("----")
