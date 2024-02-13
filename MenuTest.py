@@ -34,6 +34,8 @@ def geo_reverse(lat, lon ):
         return None
 
 
+type(map)
+st.code(map())
 lat, lon = map()
 
 if lat and lon :
