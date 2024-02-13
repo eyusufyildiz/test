@@ -3,4 +3,4 @@ streamlit_javascript
 streamlit_option_menu
 python_wireguard
 paramiko
-folium
+streamlit-folium
