@@ -13,7 +13,7 @@ def map():
     data = None
     if map.get("last_clicked"):
         data = ( map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
-        st.write(data) # Writes to the app
+        #st.write(data) # Writes to the app
         return data
 
 
@@ -35,7 +35,7 @@ def geo_reverse(lat, lon ):
 
 
 data=map()
-type(data)
+st.code(type(data))
 st.code(data)
 lat, lon = data
 
