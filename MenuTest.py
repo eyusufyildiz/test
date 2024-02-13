@@ -17,17 +17,26 @@ def map():
         return data
 
 
-
-
-geolocator = Nominatim(user_agent="geoapiExercises")
-def city_state_country(coord):
-    location = geolocator.reverse(coord, exactly_one=True)
-    address = location.raw['address']
-    city = address.get('city', '')
-    state = address.get('state', '')
-    country = address.get('country', '')
-    return city, state, country
+def geo_reverse(lat, lon):
+    from geopy.geocoders import Nominatim
+    geolocator = Nominatim(user_agent="geoapiExercises")
+    geolocator = Nominatim(user_agent="geoapiIssNow")
+    location    = geolocator.reverse(str(lat) + ", " + str(lon))
+    location_en = geolocator.reverse(str(lat) + ", " + str(lon), language='en')
+    #location    = geolocator.reverse(f"{lat}, {lon}")
+    #location_en = geolocator.reverse(f"{lat}, {lon}", language='en')
     
-#print(city_state_country("47.470706, -99.704723"))
-st.code(city_state_country( map() ))
+    try:
+        address = location.raw['address']
+        address_en = location_en.raw['address']
+        return address, address_en
+    except:
+        return None
 
+
+geo_reverse(map):
+
+if tool.geo_reverse(lat, lon):
+    st.write("ISS is now on below address/place:")
+    tbl = pd.json_normalize( tool.geo_reverse(lat, lon) )
+    st.write( tbl )
