@@ -17,12 +17,12 @@ def menu(idx=0):
 	    # Get latitude and longitude coordinates on click
 	    get_coordinates(m)
 
-def get_coordinates(m):
-    # Function to get latitude and longitude coordinates on click
-    lat_lon = folium.LatLngPopup()
-    m.add_child(lat_lon)
-    st.write("Latitude and Longitude Coordinates:")
-    st.write(lat_lon)
+	def get_coordinates(m):
+	    # Function to get latitude and longitude coordinates on click
+	    lat_lon = folium.LatLngPopup()
+	    m.add_child(lat_lon)
+	    st.write("Latitude and Longitude Coordinates:")
+	    st.write(lat_lon)
 
 
 
