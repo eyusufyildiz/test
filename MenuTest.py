@@ -34,5 +34,5 @@ def geo_reverse(lat, lon):
     except:
         return None
 
-
-geo_reverse(map)
+map()
+#geo_reverse(map)
