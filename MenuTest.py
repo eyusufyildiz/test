@@ -39,7 +39,7 @@ st.code(type(data))
 st.code(data)
 lat, lon = data
 
-lat, lot = "{:.2f}".format(lat), "{:.2f}".format(lon)
+lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
 
 st.code([lat, lot])
 
