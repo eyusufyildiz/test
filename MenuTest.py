@@ -1,6 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import folium
+from streamlit_folium import folium_static
+
 
 def menu(idx=0):
 	with st.sidebar:
