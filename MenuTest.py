@@ -29,14 +29,10 @@ def geo_reverse(lat, lon):
     try:
         address = location.raw['address']
         address_en = location_en.raw['address']
-        return address, address_en
+        st.write( address )
+        st.write( address_en )
     except:
         return None
 
 
-geo_reverse(map):
-
-if tool.geo_reverse(lat, lon):
-    st.write("ISS is now on below address/place:")
-    tbl = pd.json_normalize( tool.geo_reverse(lat, lon) )
-    st.write( tbl )
+geo_reverse(map)
