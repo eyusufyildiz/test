@@ -34,16 +34,11 @@ def geo_reverse(lat, lon):
         return None
 
 
-data=map()
-st.code(type(data))
-st.code(data)
-lat, lon = data
-
+lat, lon = map()
 lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
-
 st.code([lat, lot])
 
-if lat and lon :
-    st.write("ISS is now on below address/place:")
+if geo_reverse(lat, lon) :
+    st.write("Addess;")
     tbl = pd.json_normalize( geo_reverse(lat, lon) )
     st.write( tbl )
