@@ -32,4 +32,5 @@ def geo_reverse(lat, lon):
         return None
 
 lat_lon = map()
-geo_reverse(lat_lon[0], lat_lon[1] )
+if lat_lon:
+    geo_reverse(lat_lon[0], lat_lon[1] )
