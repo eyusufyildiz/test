@@ -38,7 +38,9 @@ data=map()
 st.code(type(data))
 st.code(data)
 lat, lon = data
-lat, lot = "%.4f" % lat, "%.4f" % lot
+
+lat, lot = "{:.2f}".format(lat), "{:.2f}".format(lon)
+
 st.code([lat, lot])
 
 if lat and lon :
