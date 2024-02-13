@@ -20,7 +20,7 @@ def get_coordinates(m):
     lat_lon = folium.LatLngPopup()
     m.add_child(lat_lon)
     st.write("Latitude and Longitude Coordinates:")
-    st.write(lat_lon)
+    st.write(lat_lon.to_json)
 
 if __name__ == "__main__":
     main()
