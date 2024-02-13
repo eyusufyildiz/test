@@ -17,7 +17,8 @@ def map():
         return data
 
 
-def geo_reverse(lat, lon ):
+def geo_reverse(lat, lon):
+    from geopy.geocoders import Nominatim
     geolocator = Nominatim(user_agent="geoapiExercises")
     geolocator = Nominatim(user_agent="geoapiIssNow")
     location    = geolocator.reverse(str(lat) + ", " + str(lon))
@@ -28,8 +29,7 @@ def geo_reverse(lat, lon ):
     try:
         address = location.raw['address']
         address_en = location_en.raw['address']
-        st.write( address )
-        st.write( address_en )
+        return address, address_en
     except:
         return None
 
@@ -41,6 +41,5 @@ lat, lon = data
 
 if lat and lon :
     st.write("ISS is now on below address/place:")
-    geo_reverse(lat, lon)
-    #tbl = pd.json_normalize( geo_reverse(lat, lon) )
-    #st.write( tbl )
+    tbl = pd.json_normalize( geo_reverse(lat, lon) )
+    st.write( tbl )
