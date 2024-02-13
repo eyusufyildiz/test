@@ -17,7 +17,8 @@ def map():
             #st.write(data) # Writes to the app
             return data
     except:
-        pass
+        return None
+
 
 def geo_reverse(lat, lon):
     try:
@@ -35,11 +36,17 @@ def geo_reverse(lat, lon):
         return None
 
 
-lat, lon = map()
-lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
-st.code([lat, lot])
-
-if lat and lot and geo_reverse(lat, lon):
-    st.text("Addess:")
-    tbl = pd.json_normalize( geo_reverse(lat, lon) )
-    st.write( tbl )
+def address():
+    try:
+        lat, lon = map()
+        lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
+        st.code([lat, lot])
+        
+        if lat and lot and geo_reverse(lat, lon):
+            st.text("Addess:")
+            tbl = pd.json_normalize( geo_reverse(lat, lon) )
+            st.write( tbl )
+    except:
+        return None
+        
+address()
