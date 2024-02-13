@@ -41,5 +41,6 @@ lat, lon = data
 
 if lat and lon :
     st.write("ISS is now on below address/place:")
-    tbl = pd.json_normalize( geo_reverse(lat, lon) )
-    st.write( tbl )
+    geo_reverse(lat, lon)
+    #tbl = pd.json_normalize( geo_reverse(lat, lon) )
+    #st.write( tbl )
