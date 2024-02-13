@@ -35,7 +35,7 @@ def geo_reverse(lat, lon ):
 
 
 data = map()
-lat, lon=data[0], data[10
+lat, lon = data[0], data[1]
 
 if geo_reverse(lat, lon):
     st.write("ISS is now on below address/place:")
