@@ -11,8 +11,6 @@ def map():
     data = None
     if map.get("last_clicked"):
         lat, lon = map["last_clicked"]["lat"], map["last_clicked"]["lng"] 
-    
-    if data is not None:
         st.write([lat, lon]) # Writes to the app
         return lat, lon
 
