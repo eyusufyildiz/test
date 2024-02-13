@@ -1,27 +1,19 @@
+
+import folium as fl
+from streamlit_folium import st_folium
 import streamlit as st
-import folium
-from streamlit_folium import folium_static
+
+def get_pos(lat,lng):
+    return lat,lng
+
+m = fl.Map()
+
+m.add_child(fl.LatLngPopup())
+
+map = st_folium(m, height=350, width=700)
 
 
-def main():
-    st.title("Get Latitude and Longitude from Map")
+data = get_pos(map['last_clicked']['lat'],map['last_clicked']['lng'])
 
-    # Create a map object using Folium
-    m = folium.Map(location=[0, 0], zoom_start=2)
-
-    # Display the map using Streamlit
-    folium_static(m)
-
-    # Get latitude and longitude coordinates on click
-    get_coordinates(m)
-
-def get_coordinates(m):
-    # Function to get latitude and longitude coordinates on click
-    lat_lon = folium.LatLngPopup()
-    m.add_child(lat_lon)
-    
-    coordinates = lat_lon
-    st.json(coordinates)
-
-if __name__ == "__main__":
-    main()
+if data is not None:
+    st.write(data)
