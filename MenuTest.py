@@ -15,7 +15,9 @@ def map():
         return data
 
 
-def geo_reverse(lat, lon):
+def geo_reverse(ldata):
+    st.write(data)
+    lat, lon = data[0],  data[1]
     geolocator = Nominatim(user_agent="geoapiExercises")
     geolocator = Nominatim(user_agent="geoapiIssNow")
     #location    = geolocator.reverse(str(lat) + ", " + str(lon))
@@ -31,6 +33,6 @@ def geo_reverse(lat, lon):
     except:
         return None
 
-lat_lon = map()
-if lat_lon:
-    geo_reverse(lat_lon[0], lat_lon[1] )
+data = map()
+if data:
+    geo_reverse(data )
