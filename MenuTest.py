@@ -10,21 +10,20 @@ def map():
     
     data = None
     if map.get("last_clicked"):
-        data = (map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
+        lat, lon = map["last_clicked"]["lat"], map["last_clicked"]["lng"] 
     
     if data is not None:
-        st.write(data) # Writes to the app
-        return data
+        st.write(lat, lon) # Writes to the app
+        return lat, lon
 
 
 def geo_reverse(lat, lon):
-    from geopy.geocoders import Nominatim
     geolocator = Nominatim(user_agent="geoapiExercises")
     geolocator = Nominatim(user_agent="geoapiIssNow")
-    location    = geolocator.reverse(str(lat) + ", " + str(lon))
-    location_en = geolocator.reverse(str(lat) + ", " + str(lon), language='en')
-    #location    = geolocator.reverse(f"{lat}, {lon}")
-    #location_en = geolocator.reverse(f"{lat}, {lon}", language='en')
+    #location    = geolocator.reverse(str(lat) + ", " + str(lon))
+    #location_en = geolocator.reverse(str(lat) + ", " + str(lon), language='en')
+    location    = geolocator.reverse(f"{lat}, {lon}")
+    location_en = geolocator.reverse(f"{lat}, {lon}", language='en')
     
     try:
         address = location.raw['address']
