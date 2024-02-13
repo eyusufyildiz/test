@@ -10,9 +10,9 @@ def map():
     
     data = None
     if map.get("last_clicked"):
-        lat, lon = map["last_clicked"]["lat"], map["last_clicked"]["lng"] 
-        st.write([lat, lon]) # Writes to the app
-        return lat, lon
+        data = ( map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
+        st.write(data) # Writes to the app
+        return data
 
 
 def geo_reverse(lat, lon):
@@ -31,5 +31,5 @@ def geo_reverse(lat, lon):
     except:
         return None
 
-lat, lon = map()
-geo_reverse(lat, lon )
+lat_lon = map()
+geo_reverse(lat_lon[0], lat_lon[1] )
