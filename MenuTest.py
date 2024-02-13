@@ -38,6 +38,7 @@ data=map()
 st.code(type(data))
 st.code(data)
 lat, lon = data
+lat, lot = "%.4f" % lat, "%.4f" % lot)
 
 if lat and lon :
     st.write("ISS is now on below address/place:")
