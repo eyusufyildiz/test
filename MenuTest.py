@@ -19,8 +19,9 @@ def get_coordinates(m):
     # Function to get latitude and longitude coordinates on click
     lat_lon = folium.LatLngPopup()
     m.add_child(lat_lon)
-    st.write("Latitude and Longitude Coordinates:")
-    st.write(lat_lon.to_json)
+    
+    coordinates = lat_lon.__geo_interface__
+    st.json(coordinates)
 
 if __name__ == "__main__":
     main()
