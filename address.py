@@ -39,9 +39,9 @@ def geo_reverse(lat, lon):
 def address():
     try:
         lat, lon  = map()
+        lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
         st.code(lat, lot)
         if lat and lot and geo_reverse(lat, lon):
-            lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
             st.text("Addess:")
             tbl = pd.json_normalize( geo_reverse(lat, lon) )
             st.write( tbl )
