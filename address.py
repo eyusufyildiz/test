@@ -15,7 +15,7 @@ def map():
         if map.get("last_clicked"):
             data = ( map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
             #st.write(data) # Writes to the app
-            return (None, None)
+            return data
     except:
         return None
 
