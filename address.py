@@ -77,8 +77,7 @@ def address():
             #if st.button("Send"):
             vpn_survey_info = " | ".join([ country_code, country, county, 
                                            state, region, province, district, city ])
-            st.success(vpn_survey_info)
-            #time.sleep(5)
+            st.write(vpn_survey_info)
             
     except:
         return None
