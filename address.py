@@ -41,10 +41,15 @@ def address():
         lat, lon  = map()
         lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
         st.write(lat, lot)
+        
+        geo_data = geo_reverse(lat, lon)
+        
         if lat and lot and geo_reverse(lat, lon):
+       #if lat and lot and geo_reverse(lat, lon):
             st.text("Addess:")
             tbl = pd.json_normalize( geo_reverse(lat, lon) )
-            geo_data = geo_reverse(lat, lon)
+           #tbl = pd.json_normalize( geo_reverse(lat, lon) )
+           #geo_data = geo_reverse(lat, lon)
             country_info_en = geo_data[1]
             
             st.write( tbl )
