@@ -44,9 +44,12 @@ def address():
         if lat and lot and geo_reverse(lat, lon):
             st.text("Addess:")
             tbl = pd.json_normalize( geo_reverse(lat, lon) )
+            geo_data = geo_reverse(lat, lon)
+            country_info_en = geo_data[1]
+            
             st.write( tbl )
-            country_info_en = tbl[1]
             st.write( country_info_en )
+            
             country_code = st.text_input(country_info_en.get('country_code'))
             country      = st.text_input(country_info_en.get('country'))
             state        = st.text_input(country_info_en.get('state'))
