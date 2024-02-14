@@ -63,10 +63,10 @@ def address():
             if country     : country      = st.text_input("Country:", country)
             if state       : state        = st.text_input("State:", state)
             if province    : province     = st.text_input("Province:", province)
-            if region      : region       = st.text_input("region:", region)
-            if district    : district     = st.text_input("region:", district)
+            if region      : region       = st.text_input("Region:", region)
+            if district    : district     = st.text_input("District:", district)
             if city        : city         = st.text_input("City:", city)
-            #if town        : town         = st.text_input("Town:", town)
+           #if town        : town         = st.text_input("Town:", town)
     except:
         return None
         
