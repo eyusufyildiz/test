@@ -50,8 +50,8 @@ def address():
             st.write( tbl )
             st.write( country_info_en )
 
-            country_code = country_info_en.get('country_code')
-            country      = country_info_en.get('country').upper()
+            country_code = country_info_en.get('country_code').upper()
+            country      = country_info_en.get('country')
             state        = country_info_en.get('state')
             province     = country_info_en.get('province')
             region       = country_info_en.get('region')
