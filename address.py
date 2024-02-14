@@ -51,7 +51,7 @@ def address():
            #geo_data = geo_reverse(lat, lon)
             country_info_en = geo_data[1]
             
-            st.table( tbl )
+            # st.table( tbl )
             #st.write( country_info_en )
 
             country_code = country_info_en.get('country_code').upper()
