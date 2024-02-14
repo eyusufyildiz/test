@@ -54,6 +54,7 @@ def address():
             country      = st.text_input("Country:", country_info_en.get('country'))
             state        = st.text_input("State:", country_info_en.get('state'))
             province     = st.text_input("Province:", country_info_en.get('province'))
+            city         = st.text_input("City:", country_info_en.get('city'))
             town         = st.text_input("Town:", country_info_en.get('town'))
     except:
         return None
