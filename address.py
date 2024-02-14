@@ -78,6 +78,7 @@ def address():
                 vpn_survey_info = " | ".join([ country_code, country, county, 
                                                state, region, province, district, city ])
                 st.success(vpn_survey_info)
+                time.sleep(5)
             
     except:
         return None
