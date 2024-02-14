@@ -45,6 +45,7 @@ def address():
             st.text("Addess:")
             tbl = pd.json_normalize( geo_reverse(lat, lon) )
             st.write( tbl )
+            st.code(tbl)
     except:
         return None
         
