@@ -67,7 +67,7 @@ def address():
             
             if country_code: country_code = st.text_input("Country Code:", country_code)
             if country     : country      = st.text_input("Country:", country)
-            if county      : county       = st.text_input("Country:", county)    
+            if county      : county       = st.text_input("County:", county)    
             if state       : state        = st.text_input("State:", state)
             if region      : region       = st.text_input("Region:", region)
             if province    : province     = st.text_input("Province:", province)
