@@ -54,6 +54,7 @@ def address():
             country      = country_info_en.get('country')
             state        = country_info_en.get('state')
             province     = country_info_en.get('province')
+            region       = country_info_en.get('region')
             city         = country_info_en.get('city')
             town         = country_info_en.get('town')
             
@@ -61,6 +62,7 @@ def address():
             if country     : country      = st.text_input("Country:", country_info_en.get('country'))
             if state       : state        = st.text_input("State:", country_info_en.get('state'))
             if province    : province     = st.text_input("Province:", country_info_en.get('province'))
+            if region      : region       = st.text_input("region:", country_info_en.get('region'))
             if city        : city         = st.text_input("City:", country_info_en.get('city'))
             if town        : town         = st.text_input("Town:", country_info_en.get('town'))
     except:
