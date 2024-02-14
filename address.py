@@ -57,7 +57,7 @@ def address():
             region       = country_info_en.get('region')
             district     = country_info_en.get('district')
             city         = country_info_en.get('city')
-            town         = country_info_en.get('town')
+            #town         = country_info_en.get('town')
             
             if country_code: country_code = st.text_input("Country Code:", country_code)
             if country     : country      = st.text_input("Country:", country)
@@ -66,7 +66,7 @@ def address():
             if region      : region       = st.text_input("region:", region)
             if district    : district     = st.text_input("region:", district)
             if city        : city         = st.text_input("City:", city)
-            if town        : town         = st.text_input("Town:", town)
+            #if town        : town         = st.text_input("Town:", town)
     except:
         return None
         
