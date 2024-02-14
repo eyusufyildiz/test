@@ -6,12 +6,11 @@ from geopy.geocoders import Nominatim
 
 
 def map():
-    data = None
     try:
         m = fl.Map()
         m.add_child(fl.LatLngPopup())
         map = st_folium(m, height=350, width=700)
-        #data = None
+        data = None
         
         if map.get("last_clicked"):
             data = ( map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
@@ -24,7 +23,7 @@ def map():
 def geo_reverse(lat, lon):
     try:
         geolocator = Nominatim(user_agent="geoapiExercises")
-        geolocator = Nominatim(user_agent="geoapiIssNow")
+        #geolocator = Nominatim(user_agent="geoapiIssNow")
         location    = geolocator.reverse(f"{lat}, {lon}")
         location_en = geolocator.reverse(f"{lat}, {lon}", language='en')
         
