@@ -46,6 +46,7 @@ def address():
             tbl = pd.json_normalize( geo_reverse(lat, lon) )
             st.write( tbl )
             country_info_en = tbl[1]
+            st.write( country_info_en )
             country_code = st.text_input(country_info_en.get('country_code'))
             country      = st.text_input(country_info_en.get('country'))
             state        = st.text_input(country_info_en.get('state'))
