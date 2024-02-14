@@ -3,6 +3,7 @@ from streamlit_folium import st_folium
 import streamlit as st
 import pandas as pd
 from geopy.geocoders import Nominatim
+import time
 
 
 def map():
@@ -76,7 +77,7 @@ def address():
             if st.button("Send"):
                 vpn_survey_info = " | ".join([ country_code, country, county, 
                                                state, region, province, district, city ])
-                st.write(vpn_survey_info)
+                st.success(vpn_survey_info)
             
     except:
         return None
