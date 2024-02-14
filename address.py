@@ -46,11 +46,11 @@ def address():
             tbl = pd.json_normalize( geo_reverse(lat, lon) )
             st.write( tbl )
             country_info_en = tbl[1]
-            country_code = st.text_input(country_info_en['country_code']
-            country = st.text_input(country_info_en['country']
-            state = st.text_input(country_info_en['state']
-            province = st.text_input(country_info_en['province']
-            town = st.text_input(country_info_en['town']
+            country_code = st.text_input(country_info_en.get('country_code')
+            country = st.text_input(country_info_en.get('country')
+            state = st.text_input(country_info_en.get('state')
+            province = st.text_input(country_info_en.get('province')
+            town = st.text_input(country_info_en.get('town')
     except:
         return None
         
