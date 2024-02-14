@@ -72,6 +72,12 @@ def address():
             if district    : district     = st.text_input("District:", district)
             city         = st.text_input("City:", city)
            #if town        : town         = st.text_input("Town:", town)
+
+            if st.button("Send"):
+                vpn_survey_info = " | ".join([ country_code, country, county, 
+                                               state, region, province, district, city ])
+                st.write(vpn_survey_info)
+            
     except:
         return None
         
