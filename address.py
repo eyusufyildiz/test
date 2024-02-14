@@ -74,11 +74,11 @@ def address():
             city         = st.text_input("City:", city)
            #if town        : town         = st.text_input("Town:", town)
 
-            if st.button("Send"):
-                vpn_survey_info = " | ".join([ country_code, country, county, 
-                                               state, region, province, district, city ])
-                st.success(vpn_survey_info)
-                time.sleep(5)
+            #if st.button("Send"):
+            vpn_survey_info = " | ".join([ country_code, country, county, 
+                                           state, region, province, district, city ])
+            st.success(vpn_survey_info)
+            #time.sleep(5)
             
     except:
         return None
