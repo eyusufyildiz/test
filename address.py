@@ -50,11 +50,11 @@ def address():
             st.write( tbl )
             st.write( country_info_en )
             
-            country_code = st.text_input(country_info_en.get('country_code'))
-            country      = st.text_input(country_info_en.get('country'))
-            state        = st.text_input(country_info_en.get('state'))
-            province     = st.text_input(country_info_en.get('province'))
-            town         = st.text_input(country_info_en.get('town'))
+            country_code = st.text_input("Country Code:", country_info_en.get('country_code'))
+            country      = st.text_input("Country:", country_info_en.get('country'))
+            state        = st.text_input("State:", country_info_en.get('state'))
+            province     = st.text_input("Province:", country_info_en.get('province'))
+            town         = st.text_input("Town:", country_info_en.get('town'))
     except:
         return None
         
