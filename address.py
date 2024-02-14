@@ -63,14 +63,14 @@ def address():
             city         = country_info_en.get('city')
             #town         = country_info_en.get('town')
             
-            if country_code: country_code = st.text_input("Country Code:", country_code)
-            if country     : country      = st.text_input("Country:", country)
+            country_code = st.text_input("Country Code:", country_code)
+            country      = st.text_input("Country:", country)
             if county      : county       = st.text_input("County:", county)    
             if state       : state        = st.text_input("State:", state)
             if region      : region       = st.text_input("Region:", region)
             if province    : province     = st.text_input("Province:", province)
             if district    : district     = st.text_input("District:", district)
-            if city        : city         = st.text_input("City:", city)
+            city         = st.text_input("City:", city)
            #if town        : town         = st.text_input("Town:", town)
     except:
         return None
