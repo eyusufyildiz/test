@@ -1,36 +1,42 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
+# Function to generate a random DataFrame
+def generate_random_data(rows, cols):
+    data = np.random.randn(rows, cols)
+    df = pd.DataFrame(data, columns=[f"Column {i+1}" for i in range(cols)])
+    return df
+
+# Function to edit a cell in the DataFrame
+def edit_cell(df, row_index, col_index, new_value):
+    df.iloc[row_index, col_index] = new_value
+    return df
+
+# Main function
 def main():
-    st.title('Simple Table Editor')
+    st.title("Random Number Table Editor")
 
-    # Initialize an empty DataFrame
-    data = {'Name': [], 'Age': []}
-    df = pd.DataFrame(data)
+    # Generate random data
+    rows = st.slider("Number of Rows", min_value=1, max_value=20, value=5)
+    cols = st.slider("Number of Columns", min_value=1, max_value=10, value=3)
 
-    # Display the current table
-    st.write('## Current Table')
+    df = generate_random_data(rows, cols)
+
+    # Display the DataFrame
+    st.write("Original DataFrame:")
     st.write(df)
 
-    # Add data to the table
-    st.write('## Add Data')
-    add_name = st.text_input('Enter Name')
-    add_age = st.number_input('Enter Age')
-    if st.button('Add Data'):
-        new_row = {'Name': add_name, 'Age': add_age}
-        df = df.append(new_row, ignore_index=True)
-        st.write('Data Added Successfully!')
+    # Edit a cell
+    st.subheader("Edit Cell")
+    row_index = st.number_input("Row Index (0-based)", min_value=0, max_value=rows-1, value=0)
+    col_index = st.number_input("Column Index (0-based)", min_value=0, max_value=cols-1, value=0)
+    new_value = st.number_input("New Value", value=df.iloc[row_index, col_index])
+
+    if st.button("Edit Cell"):
+        df = edit_cell(df, row_index, col_index, new_value)
+        st.write("Updated DataFrame:")
         st.write(df)
 
-    # Edit cell in the table
-    st.write('## Edit Cell')
-    edit_index = st.number_input('Enter Index to Edit', min_value=0, max_value=len(df)-1, value=0)
-    edit_column = st.selectbox('Select Column to Edit', options=df.columns)
-    edit_value = st.text_input('Enter New Value')
-    if st.button('Edit Cell'):
-        df.at[edit_index, edit_column] = edit_value
-        st.write('Cell Edited Successfully!')
-        st.write(df)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
