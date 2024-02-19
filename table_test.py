@@ -28,5 +28,3 @@ edited_df = st.data_editor(
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()] 
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
-
-
