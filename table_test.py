@@ -8,6 +8,8 @@ df = pd.DataFrame(
        {"command": "st.time_input", "rating": 3, "is_widget": True},
    ]
 )
+
+
 edited_df = st.data_editor(df)
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmin()]["command"]
