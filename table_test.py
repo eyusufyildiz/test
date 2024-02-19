@@ -1,19 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-# Create a function to add data to the table
-def add_data(df, name, age):
-    new_data = {'Name': name, 'Age': age}
-    df = df.append(new_data, ignore_index=True)
-    return df
-
-# Create a function to edit a cell in the table
-def edit_cell(df, index, column, new_value):
-    df.at[index, column] = new_value
-    return df
-
 def main():
-    st.title('Table Editor')
+    st.title('Simple Table Editor')
 
     # Initialize an empty DataFrame
     data = {'Name': [], 'Age': []}
@@ -28,7 +17,8 @@ def main():
     add_name = st.text_input('Enter Name')
     add_age = st.number_input('Enter Age')
     if st.button('Add Data'):
-        df = add_data(df, add_name, add_age)
+        new_row = {'Name': add_name, 'Age': add_age}
+        df = df.append(new_row, ignore_index=True)
         st.write('Data Added Successfully!')
         st.write(df)
 
@@ -38,7 +28,7 @@ def main():
     edit_column = st.selectbox('Select Column to Edit', options=df.columns)
     edit_value = st.text_input('Enter New Value')
     if st.button('Edit Cell'):
-        df = edit_cell(df, edit_index, edit_column, edit_value)
+        df.at[edit_index, edit_column] = edit_value
         st.write('Cell Edited Successfully!')
         st.write(df)
 
