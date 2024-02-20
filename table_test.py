@@ -23,4 +23,4 @@ grid_options = {
 grid_return = AgGrid(df, grid_options)
 new_df = grid_return["data"]
 
-st.write(new_df)
+#st.write(new_df)
