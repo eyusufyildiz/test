@@ -14,7 +14,7 @@ grid_options = {
         {
             "headerName": "col2",
             "field": "col2",
-            "editable": False,
+            "editable": True,
         },
     ],
 }
