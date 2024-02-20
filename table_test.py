@@ -1,16 +1,7 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
-# Create a dataframe
-df = pd.DataFrame({'Name': ['Alice', 'Bob', 'Carol'], 'Age': [25, 30, 35]})
+df = pd.DataFrame(np.random.randn(10, 20), columns=("col %d" % i for i in range(20)))
 
-# Define a function to be called when the data editor is changed
-def on_change():
-    # Get the edited data
-    edited_df = st.session_state.edited_df
-
-    # Print the edited data
-    st.write(edited_df)
-
-# Display the data editor
-st.data_editor(df, on_change=on_change)
+st.dataframe(df.style.highlight_max(axis=0))
