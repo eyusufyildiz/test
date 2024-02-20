@@ -8,7 +8,7 @@ import time
 
 def map():
     try:
-        m = fl.Map( tiles="cartodb positron" )
+        m = fl.Map( tooltip="Coast")
         m.add_child(fl.LatLngPopup())
         map = st_folium(m, height=350, width=700)
         data = None
