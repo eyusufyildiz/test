@@ -8,4 +8,4 @@ paramiko
 streamlit-folium
 folium
 geopy
-st_aggrid
+streamlit-aggrid
