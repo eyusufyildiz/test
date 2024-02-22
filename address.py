@@ -1,8 +1,5 @@
 import streamlit as st
-from utils import page_utils as pu
-from utils import tools as tool
-from utils import ip_detect as ip_detect
-from utils import mysqldb as msql
+
 import time
 
 import folium as fl
