@@ -6,7 +6,7 @@ from geopy.geocoders import Nominatim
 import time
 
 
-def map():
+def folium_map():
     try:
         m = fl.Map( tooltip="Coast")
         m.add_child(fl.LatLngPopup())
@@ -15,7 +15,7 @@ def map():
         
         if map.get("last_clicked"):
             data = ( map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
-            #st.write(data) # Writes to the app
+            st.code(data) # Writes to the app
             return data
     except:
         return None
@@ -37,7 +37,7 @@ def geo_reverse(lat, lon):
 
 def address():
     try:
-        lat, lon  = map()
+        lat, lon  = folium_map()
         lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
         st.write(lat, lot)
         
