@@ -1,25 +1,41 @@
 import streamlit as st
 
-# Create a function for each page
-def home_page():
-  st.title("Home Page")
-  st.write("This is the home page.")
+# Define page names
+PAGE_HOME = "Home"
+PAGE_ABOUT = "About"
+PAGE_CONTACT = "Contact"
 
-def about_page():
-  st.title("About Page")
-  st.write("This is the about page.")
+# Create a function to display the Home page content
+def display_home():
+    st.title("Home Page")
+    st.write("Welcome to the Home Page")
+    # Add more content as needed
 
-# Create the main app
+# Create a function to display the About page content
+def display_about():
+    st.title("About Page")
+    st.write("Welcome to the About Page")
+    # Add more content as needed
+
+# Create a function to display the Contact page content
+def display_contact():
+    st.title("Contact Page")
+    st.write("Welcome to the Contact Page")
+    # Add more content as needed
+
+# Main function to run the Streamlit app
 def main():
-  # Add a selectbox to the sidebar
-  page = st.sidebar.selectbox("Select a page", ["Home", "About"])
+    st.sidebar.title("Navigation Menu")
+    # Create a radio button for page navigation
+    page = st.sidebar.radio("Go to", [PAGE_HOME, PAGE_ABOUT, PAGE_CONTACT])
 
-  # Display the selected page
-  if page == "Home":
-    home_page()
-  elif page == "About":
-    about_page()
+    # Display the selected page content
+    if page == PAGE_HOME:
+        display_home()
+    elif page == PAGE_ABOUT:
+        display_about()
+    elif page == PAGE_CONTACT:
+        display_contact()
 
-# Run the main app
 if __name__ == "__main__":
-  main()
+    main()
