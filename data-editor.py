@@ -1,3 +1,6 @@
+import pandas as pd
+import streamlit as st
+
 df = pd.DataFrame(
     [
         {"command": "st.selectbox", "rating": 4, "is_widget": True},
