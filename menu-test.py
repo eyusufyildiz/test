@@ -19,7 +19,7 @@ def main():
     elif st.session_state.navigation == "Contact":
         st.title("Contact")
         st.write("Contact us via email or phone for further assistance.")
-        home_page
+        
 
 if __name__ == "__main__":
     main()
