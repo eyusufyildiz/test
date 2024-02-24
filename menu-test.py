@@ -23,5 +23,5 @@ def main():
         st.header("Contact")
         st.write("Contact us via email or phone for further assistance.")
 
-if __name__ == "__main__":
-    main()
+    
+main()
