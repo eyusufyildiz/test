@@ -1,27 +1,25 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 
 def main():
-    st.title("Vertical Navigation Menu")
+    st.sidebar.title('Navigation')
 
-    # Define options for the vertical menu
-    options = ["Home", "About", "Contact"]
+    # Create links to different pages
+    home_page = st.page_link("Home", "Home")
+    about_page = st.page_link("About", "About")
+    contact_page = st.page_link("Contact", "Contact")
 
-    # Display vertical navigation menu
-    choice = option_menu("Navigation", options, orientation="vertical")
-
-    # Display content based on the selected option
-    if choice == "Home":
-        st.header("Home")
+    if st.session_state.navigation == "Home":
+        st.title("Home")
         st.write("Welcome to the Home page.")
 
-    elif choice == "About":
-        st.header("About")
+    elif st.session_state.navigation == "About":
+        st.title("About")
         st.write("This is the About page. Here you can find information about us.")
 
-    elif choice == "Contact":
-        st.header("Contact")
+    elif st.session_state.navigation == "Contact":
+        st.title("Contact")
         st.write("Contact us via email or phone for further assistance.")
 
+if __name__ == "__main__":
+    main()
     
-main()
