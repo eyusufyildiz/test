@@ -14,4 +14,4 @@ favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 
-st.table(st.session_state())
+st.table(st.session_state)
