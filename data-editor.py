@@ -8,10 +8,17 @@ df = pd.DataFrame(
        {"command": "st.time_input", "rating": 3, "is_widget": True},
    ]
 )
-edited_df = st.data_editor(df, num_rows="dynamic")
+
+# Define a function to be called when the data is changed
+def on_change(df):
+    # Update the dataframe
+    #df['age'] += 1
+    st.warning("Dataframe is changed")
+
+# Display the data editor
+edited_df = st.data_editor(df, on_change=on_change, num_rows="dynamic")
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
-
 
 st.code(st.session_state)
