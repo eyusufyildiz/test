@@ -8,13 +8,14 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# Display the dataframe and enable editing
-edited_df = st.dataframe(df, height=300)
-edited_df.data_editor()
+# Display the editable dataframe
+edited_df = st.beta_editable_dataframe(df)
 
 # Get the rows that have been edited
-edited_rows = edited_df.edited_rows
-st.write('Edited Rows:', edited_rows)
+edited_rows = st.button("Get Edited Rows")
+if edited_rows:
+    st.write('Edited Rows:', edited_df)
 
 # Display the updated dataframe
 st.write('Updated DataFrame:', edited_df)
+
