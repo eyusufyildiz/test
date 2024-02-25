@@ -25,7 +25,7 @@ def page():
     if not st.session_state['boq'].empty:
         edited_df = st.data_editor(
             st.session_state['boq'],
-            height=700
+            height=300
         )
 
         # If column "ANALYZE" is set to False, set the value of
