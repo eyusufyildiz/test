@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 from vega_datasets import local_data as ld
 
-st.set_page_config(layout="wide")
-
-
+# st.set_page_config(layout="wide")
 @st.cache_data
 def get_data(id: int):
     return ld.airports().head(10)
@@ -14,13 +12,6 @@ def highlight_changes(val):
     color = f"color: black;" if val else "color:lightgray;"
     background = f"background-color:lightgray;" if val else ""
     return f"{color} {background}"
-
-st.subheader("Edit your data ⬇️")
-data = get_data(1)
-editor_df = st.data_editor( data, 
-                            key="airport_edit", 
-                            num_rows="dynamic", 
-                            use_container_width=True )
 
 
 def show_diff( source_df: pd.DataFrame, modified_df: pd.DataFrame, editor_key: dict ) -> None:
@@ -69,5 +60,14 @@ show_diff( source_df=data,
            modified_df=editor_df, 
            editor_key=st.session_state["airport_edit"]
 )
+
+
+st.subheader("Edit your data ⬇️")
+data = get_data(1)
+editor_df = st.data_editor( data, 
+                            key="airport_edit", 
+                            num_rows="dynamic", 
+                            use_container_width=True )
+
 
 
