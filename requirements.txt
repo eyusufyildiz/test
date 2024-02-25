@@ -1,5 +1,3 @@
-
-
 streamlit
 streamlit_javascript
 streamlit_option_menu
@@ -9,3 +7,6 @@ streamlit-folium
 folium
 geopy
 streamlit-aggrid
+
+
+vega_datasets
