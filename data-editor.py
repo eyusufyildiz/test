@@ -11,7 +11,7 @@ st.dataframe(df)
 edited_df = st.data_editor(df)
 
 # Get the edited row
-edited_row = edited_df[edited_df['Name'] == 'Alice']
+edited_row = edited_df[edited_df['Name'] ]
 
 # Display the edited row
 st.write(edited_row)
