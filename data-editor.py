@@ -1,16 +1,17 @@
-import streamlit as st
 import pandas as pd
+import streamlit as st
 
-df = pd.DataFrame({"A": [1, 2, 3, 4], "B": [1, 2, 3, 4]})
+# Create a dataframe
+df = pd.DataFrame({'Name': ['Alice', 'Bob', 'Carol'], 'Age': [25, 30, 35]})
 
-col1, col2 = st.columns(2)
-with col1:
-    st.subheader("DataFrame")
-    aa=st.data_editor( df, key="display1", disabled=("B"), )
-    
+# Display the dataframe
+st.dataframe(df)
 
-with col2:
-    st.subheader("after update")
-    aa
+# Add a data editor widget
+edited_df = st.data_editor(df)
 
-st.write("Streamlit version: ", st.__version__)
+# Get the edited row
+edited_row = edited_df[edited_df['Name'] == 'Alice']
+
+# Display the edited row
+st.write(edited_row)
