@@ -7,6 +7,7 @@ st.set_page_config(layout="wide")
 
 @st.cache_data
 def get_data(id: int):
+    #return ld.airports().head(10)
     return ld.airports().head(10)
 
 
