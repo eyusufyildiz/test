@@ -1,69 +1,44 @@
 import streamlit as st
 import pandas as pd
-from vega_datasets import local_data as ld
-
-@st.cache_data
-def get_data(id: int):
-    return ld.airports().head(10)
 
 
-def highlight_changes(val):
-    color = f"color: black;" if val else "color:lightgray;"
-    background = f"background-color:lightgray;" if val else ""
-    return f"{color} {background}"
+# Create a session variable
+if 'boq' not in st.session_state:
+    st.session_state['boq'] = pd.DataFrame()
 
 
-st.subheader("Edit your data ⬇️")
-data = get_data(1)
-editor_df = st.data_editor( data, key="airport_edit", 
-                            num_rows="dynamic" )
+def page():
+    st.write("# Test")
 
-st.table(editor_df)
+    # If button is pressed, assign a pre-built dataframe to the variable.
+    if st.button("Analyze", type="primary"):
+        st.session_state['boq'] = pd.DataFrame(
+            data={
+                "ANALYZE": [True, False, True],
+                "CAT": ["Car", "Truck", "Bike"],
+                "TYPE": ["blue", False, "yellow"],
+                "DESC": ["two door", "four door", "single"],
+            }
+        )
 
-def show_diff(source_df, modified_df, editor_key):
-    target = pd.DataFrame(editor_key.get("edited_rows")).transpose().reset_index()
-    modified_columns = [i for i in target.notna().columns if i != "index"]
-    source = source_df.iloc[target.index].reset_index()
-    target = target[modified_columns].reset_index()
+    # If variable is not empty, construct a data_editor.
+    if not st.session_state['boq'].empty:
+        edited_df = st.data_editor(
+            st.session_state['boq'],
+            height=700
+        )
 
-    changes = pd.merge(
-        source[modified_columns].reset_index(),
-        target,
-        how="outer",
-        on="index",
-        suffixes=["_BEFORE", "_AFTER"],
-    )
-    after_columns = [i for i in changes.columns if "_AFTER" in i]
-    for cl in changes:
-        if cl in after_columns:
-            new_col = cl.replace("_AFTER", "_BEFORE")
-            changes[cl] = changes[cl].fillna(changes[new_col])
+        # If column "ANALYZE" is set to False, set the value of
+        # "TYPE" to None. Be sure to update column "TYPE" only if
+        # there are changes to column "ANALYZE".
+        is_equal = edited_df['ANALYZE'].equals(st.session_state['boq']['ANALYZE'])
+        if not is_equal:
+            edited_df.loc[edited_df["ANALYZE"] == False, "TYPE"] = None
+            edited_df.ffill(inplace=True)
+            st.session_state['boq'] = edited_df  # update the variable
 
-    st.subheader("Modified")
-    st.caption("Showing only modified columns")
+            # Set streamlit to rerun the script from top to bottom
+            # to update the data editor.
+            st.rerun()
 
-    change_markers = changes.copy()
-    for cl in change_markers:
-        if cl in after_columns:
-            new_col = cl.replace("_AFTER", "_BEFORE")
-            change_markers[cl] = change_markers[cl] != change_markers[new_col]
-            change_markers[new_col] = change_markers[cl]
-    st.dataframe(
-        changes.style.apply(
-            lambda _: change_markers.applymap(highlight_changes), axis=None
-        ),
-        use_container_width=True,
-        hide_index=True,
-    )
-
-    st.subheader("Inserted Rows")
-    inserted = pd.DataFrame(editor_key.get("added_rows"))
-    st.dataframe(inserted, use_container_width=True)
-    st.subheader("Deleted Rows")
-    st.dataframe(data.iloc[editor_key.get("deleted_rows")], use_container_width=True)
-
-
-show_diff(
-    source_df=data, modified_df=editor_df, editor_key=st.session_state["airport_edit"]
-)
-
+page()
