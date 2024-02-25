@@ -13,14 +13,7 @@ with col1:
     )
 
 with col2:
-    st.subheader("Styler")
-    styled_df = df.style.format( 
-        { "A": "{:.1f}%",  "B": "{:.2f}€", }
-    )
-    st.data_editor(
-        styled_df,
-        key="display2",
-        disabled=("B"),
-    )
+    st.subheader("after update")
+    df
 
 st.write("Streamlit version: ", st.__version__)
