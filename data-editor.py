@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 from vega_datasets import local_data as ld
 
-#st.set_page_config(layout="wide")
-
+st.set_page_config(layout="wide")
 
 @st.cache_data
 def get_data(id: int):
