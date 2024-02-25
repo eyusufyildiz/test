@@ -15,12 +15,11 @@ def highlight_changes(val):
 
 st.subheader("Edit your data ⬇️")
 data = get_data(1)
-editor_df = st.data_editor(
-    data, key="airport_edit", num_rows="dynamic", use_container_width=True
-)
+editor_df = st.data_editor( data, key="airport_edit", 
+                            num_rows="dynamic" )
 
+st.table(editor_df)
 
-#def show_diff(source_df: pd.DataFrame, modified_df: pd.DataFrame, editor_key: dict) -> None:
 def show_diff(source_df, modified_df, editor_key):
     target = pd.DataFrame(editor_key.get("edited_rows")).transpose().reset_index()
     modified_columns = [i for i in target.notna().columns if i != "index"]
