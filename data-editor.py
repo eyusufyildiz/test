@@ -7,7 +7,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("DataFrame")
     aa=st.data_editor( df, key="display1", disabled=("B"), )
-    aa
+    
 
 with col2:
     st.subheader("after update")
