@@ -1,18 +1,14 @@
-import pandas as pd
 import streamlit as st
+import pandas as pd
 
 # Create a dataframe
-df = pd.DataFrame({'Name': ['Alice', 'Bob', 'Carol'], 'Age': [25, 30, 35]})
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
 
-# Display the dataframe
-st.dataframe(df)
-
-# Add a data editor widget
+# Use the st.data_editor widget to allow users to edit the dataframe
 edited_df = st.data_editor(df)
 
-# Get the edited row
-edited_row = edited_df[edited_df['Name'] == 'Alice']
-edited_row1 = edited_df[edited_df['Name'] == 'Bob']
-# Display the edited row
-st.write(edited_row)
-st.write(edited_row1)
+# Get the edited dataframe using st.session_state
+edited_df = st.session_state['edited_df']
+
+# Identify the rows that have been edited by comparing the edited dataframe with the original dataframe
+edited_rows = edited_df[edited_df != df].index
