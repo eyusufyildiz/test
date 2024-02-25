@@ -6,14 +6,10 @@ df = pd.DataFrame({"A": [1, 2, 3, 4], "B": [1, 2, 3, 4]})
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("DataFrame")
-    st.data_editor(
-        df,
-        key="display1",
-        disabled=("B"),
-    )
+    aa=st.data_editor( df, key="display1", disabled=("B"), )
 
 with col2:
     st.subheader("after update")
-    df
+    aa
 
 st.write("Streamlit version: ", st.__version__)
