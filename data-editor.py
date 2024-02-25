@@ -12,12 +12,12 @@ def highlight_changes(val):
     background = f"background-color:lightgray;" if val else ""
     return f"{color} {background}"
 
-def part1():
-    st.subheader("Edit your data ⬇️")
-    data = get_data(1)
-    editor_df = st.data_editor(
-        data, key="airport_edit", num_rows="dynamic", use_container_width=True
-    )
+
+st.subheader("Edit your data ⬇️")
+data = get_data(1)
+editor_df = st.data_editor(
+    data, key="airport_edit", num_rows="dynamic", use_container_width=True
+)
 
 
 def show_diff(
@@ -65,7 +65,6 @@ def show_diff(
     st.dataframe(data.iloc[editor_key.get("deleted_rows")], use_container_width=True)
 
 
-part1()
 show_diff(
     source_df=data, modified_df=editor_df, editor_key=st.session_state["airport_edit"]
 )
