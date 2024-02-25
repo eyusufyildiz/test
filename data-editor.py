@@ -14,11 +14,8 @@ with col1:
 
 with col2:
     st.subheader("Styler")
-    styled_df = df.style.format(
-        {
-            "A": "{:.1f}%",
-            "B": "{:.2f}€",
-        }
+    styled_df = df.style.format( 
+        { "A": "{:.1f}%",  "B": "{:.2f}€", }
     )
     st.data_editor(
         styled_df,
