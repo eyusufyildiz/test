@@ -1,21 +1,29 @@
 import streamlit as st
 import pandas as pd
 
-# Sample dataframe
-data = {
-    'Name': ['Alice', 'Bob', 'Charlie'],
-    'Age': [25, 30, 35]
-}
-df = pd.DataFrame(data)
+df = pd.DataFrame({"A": [1, 2, 3, 4], "B": [1, 2, 3, 4]})
 
-# Display the editable dataframe
-edited_df = st.beta_editable_dataframe(df)
+col1, col2 = st.columns(2)
+with col1:
+    st.subheader("DataFrame")
+    st.data_editor(
+        df,
+        key="display1",
+        disabled=("B"),
+    )
 
-# Get the rows that have been edited
-edited_rows = st.button("Get Edited Rows")
-if edited_rows:
-    st.write('Edited Rows:', edited_df)
+with col2:
+    st.subheader("Styler")
+    styled_df = df.style.format(
+        {
+            "A": "{:.1f}%",
+            "B": "{:.2f}€",
+        }
+    )
+    st.data_editor(
+        styled_df,
+        key="display2",
+        disabled=("B"),
+    )
 
-# Display the updated dataframe
-st.write('Updated DataFrame:', edited_df)
-
+st.write("Streamlit version: ", st.__version__)
