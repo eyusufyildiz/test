@@ -83,6 +83,6 @@ def get_data():
 
 
 run(get_data())
-st.split()
+st.divider()
 st.json(st.session_state)
-st.split()
+st.divider()
