@@ -49,7 +49,6 @@ def update_row():
 def run(df):
     ###############################
     if "data" not in st.session_state:
-        #df = get_data()
         df["select"] = False
         st.session_state["data"] = df
 
@@ -83,3 +82,4 @@ def run(df):
 
 
 run(get_data())
+st.code(st.session_state)
