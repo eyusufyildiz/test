@@ -4,22 +4,6 @@ import pandas as pd
 import random
 import numpy as np
 
-
-@st.cache_data
-def get_data():
-    return pd.DataFrame(
-        {
-            "categorical": np.random.choice(
-                ["A", "B", "C", "D", "E", "F", "G", "H", "I"], 10
-            ),
-            "date": np.random.choice(
-                pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 10
-            ),
-            "numerical": np.random.randint(1, 10, 10),
-            "bool": np.random.choice([True, False], 10),
-        }
-    )
-
 def get_row_and_clear_selection():
     key = st.session_state["editor_key"]
     df = st.session_state["data"]
@@ -53,7 +37,7 @@ def run(df):
         st.session_state["data"] = df
 
     if "editor_key" not in st.session_state:
-        st.session_state["editor_key"] = random.randint(0, 100000)
+        st.session_state["editor_key"] = random.randint(0, 10000000)
 
     if "last_selected_row" not in st.session_state:
         st.session_state["last_selected_row"] = None
@@ -79,6 +63,22 @@ def run(df):
         st.date_input("Prueba Date", value=last_row["date"], key="prueba_date")
 
         st.button("Modify", on_click=update_row)
+
+
+@st.cache_data
+def get_data():
+    return pd.DataFrame(
+        {
+            "categorical": np.random.choice(
+                ["A", "B", "C", "D", "E", "F", "G", "H", "I"], 10
+            ),
+            "date": np.random.choice(
+                pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 10
+            ),
+            "numerical": np.random.randint(1, 10, 10),
+            "bool": np.random.choice([True, False], 10),
+        }
+    )
 
 
 run(get_data())
