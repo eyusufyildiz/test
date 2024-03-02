@@ -20,8 +20,6 @@ def get_data():
         }
     )
 
-
-
 def get_row_and_clear_selection():
     key = st.session_state["editor_key"]
     df = st.session_state["data"]
@@ -39,9 +37,6 @@ def get_row_and_clear_selection():
     st.session_state["data"].loc[last_row, "select"] = True
     st.session_state["last_selected_row_index"] = last_row
 
-
-
-
 def update_row():
     idx = st.session_state["last_selected_row_index"]
 
@@ -51,38 +46,40 @@ def update_row():
     st.session_state["data"].loc[idx, "date"] = str(st.session_state["prueba_date"])
 
 
+def run():
+    ###############################
+    if "data" not in st.session_state:
+        df = get_data()
+        df["select"] = False
+        st.session_state["data"] = df
+
+    if "editor_key" not in st.session_state:
+        st.session_state["editor_key"] = random.randint(0, 100000)
+
+    if "last_selected_row" not in st.session_state:
+        st.session_state["last_selected_row"] = None
+    ###############################
 
 
-###############################
-if "data" not in st.session_state:
-    df = get_data()
-    df["select"] = False
-    st.session_state["data"] = df
-
-if "editor_key" not in st.session_state:
-    st.session_state["editor_key"] = random.randint(0, 100000)
-
-if "last_selected_row" not in st.session_state:
-    st.session_state["last_selected_row"] = None
-###############################
+    st.data_editor(
+        st.session_state["data"],
+        key=st.session_state["editor_key"],
+        on_change=get_row_and_clear_selection,
+    )
 
 
-st.data_editor(
-    st.session_state["data"],
-    key=st.session_state["editor_key"],
-    on_change=get_row_and_clear_selection,
-)
+    last_row = st.session_state["last_selected_row"]
+
+    if last_row is not None:
+        st.write("Last selected row:", last_row)
+        st.write("Do something with that data...")
+
+        st.checkbox("Prueba", value=last_row["bool"], key="prueba")
+        st.number_input("Prueba Number", value=last_row["numerical"], key="prueba_number")
+        st.text_input("Prueba Text", value=last_row["categorical"], key="prueba_text")
+        st.date_input("Prueba Date", value=last_row["date"], key="prueba_date")
+
+        st.button("Modify", on_click=update_row)
 
 
-last_row = st.session_state["last_selected_row"]
-
-if last_row is not None:
-    st.write("Last selected row:", last_row)
-    st.write("Do something with that data...")
-
-    st.checkbox("Prueba", value=last_row["bool"], key="prueba")
-    st.number_input("Prueba Number", value=last_row["numerical"], key="prueba_number")
-    st.text_input("Prueba Text", value=last_row["categorical"], key="prueba_text")
-    st.date_input("Prueba Date", value=last_row["date"], key="prueba_date")
-
-    st.button("Modify", on_click=update_row)
+run()
