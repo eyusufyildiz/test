@@ -17,7 +17,7 @@ def get_row_and_clear_selection():
     df = st.session_state["data"]
     selected_rows = st.session_state[key]["edited_rows"]
 
-    # st.write("Selected Row(s) ->", selected_rows)
+    st.write("Selected Row(s) ->", selected_rows)
     
     # Adding "select" column
     selected_rows = [int(row) for row in selected_rows if selected_rows[row]["select"]]
