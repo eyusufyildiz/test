@@ -10,13 +10,13 @@ def get_data():
     return pd.DataFrame(
         {
             "categorical": np.random.choice(
-                ["A", "B", "C", "D", "E", "F", "G", "H", "I"], 30
+                ["A", "B", "C", "D", "E", "F", "G", "H", "I"], 10
             ),
             "date": np.random.choice(
-                pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 30
+                pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 10
             ),
             "numerical": np.random.randint(1, 10, 30),
-            "bool": np.random.choice([True, False], 30),
+            "bool": np.random.choice([True, False], 10),
         }
     )
 
