@@ -55,13 +55,13 @@ def run(df):
     last_row = st.session_state["last_selected_row"]
 
     if last_row is not None:
-        #st.write("Last selected row:", last_row)
+        st.write("Last selected row:", last_row)
         #st.write("Do something with that data...")
 
-        st.checkbox("Prueba", value=last_row["bool"], key="prueba")
-        st.number_input("Prueba Number", value=last_row["numerical"], key="prueba_number")
-        st.text_input("Prueba Text", value=last_row["categorical"], key="prueba_text")
-        st.date_input("Prueba Date", value=last_row["date"], key="prueba_date")
+        #st.checkbox("Prueba", value=last_row["bool"], key="prueba")
+        #st.number_input("Prueba Number", value=last_row["numerical"], key="prueba_number")
+        #st.text_input("Prueba Text", value=last_row["categorical"], key="prueba_text")
+        #st.date_input("Prueba Date", value=last_row["date"], key="prueba_date")
 
         st.button("Modify", on_click=update_row)
 
