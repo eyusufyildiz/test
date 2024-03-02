@@ -55,7 +55,7 @@ def run(df):
     last_row = st.session_state["last_selected_row"]
 
     if last_row is not None:
-        st.write("Last selected row:", last_row)
+        #st.write("Last selected row:", last_row)
         #st.write("Do something with that data...")
 
         #st.checkbox("Prueba", value=last_row["bool"], key="prueba")
@@ -63,19 +63,17 @@ def run(df):
         #st.text_input("Prueba Text", value=last_row["categorical"], key="prueba_text")
         #st.date_input("Prueba Date", value=last_row["date"], key="prueba_date")
 
-        st.button("Modify", on_click=update_row)
+        #st.button("Modify", on_click=update_row)
+        if st.button("Modify"):
+            st.write("Last selected row:", st.code(last_row))
 
 
 @st.cache_data
 def get_data():
     return pd.DataFrame(
         {
-            "categorical": np.random.choice(
-                ["A", "B", "C", "D", "E", "F", "G", "H", "I"], 10
-            ),
-            "date": np.random.choice(
-                pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 10
-            ),
+            "categorical": np.random.choice(["A", "B", "C", "D", "E", "F", "G", "H", "I"], 10 ),
+            "date": np.random.choice(pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 10 ),
             "numerical": np.random.randint(1, 10, 10),
             "bool": np.random.choice([True, False], 10),
         }
