@@ -15,7 +15,7 @@ def get_data():
             "date": np.random.choice(
                 pd.date_range(date(2023, 7, 1), date(2023, 7, 31)), 10
             ),
-            "numerical": np.random.randint(1, 10, 30),
+            "numerical": np.random.randint(1, 10, 10),
             "bool": np.random.choice([True, False], 10),
         }
     )
