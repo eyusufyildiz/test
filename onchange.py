@@ -4,23 +4,6 @@ import pandas as pd
 import random
 import numpy as np
 
-def get_row_and_clear_selection():
-    key = st.session_state["editor_key"]
-    df = st.session_state["data"]
-    selected_rows = st.session_state[key]["edited_rows"]
-    print(selected_rows)
-    selected_rows = [int(row) for row in selected_rows if selected_rows[row]["select"]]
-    try:
-        last_row = selected_rows[-1]
-    except IndexError:
-        return
-    df["select"] = False
-    st.session_state["data"] = df
-    st.session_state["editor_key"] = random.randint(0, 100000)
-    st.session_state["last_selected_row"] = df.iloc[last_row]
-    st.session_state["data"].loc[last_row, "select"] = True
-    st.session_state["last_selected_row_index"] = last_row
-
 def update_row():
     idx = st.session_state["last_selected_row_index"]
 
@@ -28,6 +11,27 @@ def update_row():
     st.session_state["data"].loc[idx, "numerical"] = st.session_state["prueba_number"]
     st.session_state["data"].loc[idx, "bool"] = st.session_state["prueba"]
     st.session_state["data"].loc[idx, "date"] = str(st.session_state["prueba_date"])
+
+def get_row_and_clear_selection():
+    key = st.session_state["editor_key"]
+    df = st.session_state["data"]
+    selected_rows = st.session_state[key]["edited_rows"]
+
+    st.write("Selected Row(s) ->", selected_rows)
+    
+    selected_rows = [int(row) for row in selected_rows if selected_rows[row]["select"]]
+    
+    try:
+        last_row = selected_rows[-1]
+    except IndexError:
+        return
+    df["select"] = False
+    
+    st.session_state["data"] = df
+    st.session_state["editor_key"] = random.randint(0, 100000)
+    st.session_state["last_selected_row"] = df.iloc[last_row]
+    st.session_state["data"].loc[last_row, "select"] = True
+    st.session_state["last_selected_row_index"] = last_row
 
 
 def run(df):
@@ -42,7 +46,6 @@ def run(df):
     if "last_selected_row" not in st.session_state:
         st.session_state["last_selected_row"] = None
     ###############################
-
 
     st.data_editor(
         st.session_state["data"],
