@@ -82,4 +82,4 @@ def run(df):
 
 
 run(get_data())
-st.code(st.session_state)
+st.text(st.session_state)
