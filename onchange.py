@@ -16,8 +16,6 @@ def get_row_and_clear_selection():
     key = st.session_state["editor_key"]
     df = st.session_state["data"]
     selected_rows = st.session_state[key]["edited_rows"]
-
-    st.write("Selected Row(s) ->", selected_rows)
     
     # Adding "select" column
     selected_rows = [int(row) for row in selected_rows if selected_rows[row]["select"]]
@@ -57,8 +55,8 @@ def run(df):
     last_row = st.session_state["last_selected_row"]
 
     if last_row is not None:
-        st.write("Last selected row:", last_row)
-        st.write("Do something with that data...")
+        #st.write("Last selected row:", last_row)
+        #st.write("Do something with that data...")
 
         st.checkbox("Prueba", value=last_row["bool"], key="prueba")
         st.number_input("Prueba Number", value=last_row["numerical"], key="prueba_number")
