@@ -46,10 +46,10 @@ def update_row():
     st.session_state["data"].loc[idx, "date"] = str(st.session_state["prueba_date"])
 
 
-def run():
+def run(df):
     ###############################
     if "data" not in st.session_state:
-        df = get_data()
+        #df = get_data()
         df["select"] = False
         st.session_state["data"] = df
 
@@ -82,4 +82,4 @@ def run():
         st.button("Modify", on_click=update_row)
 
 
-run()
+run(get_data())
