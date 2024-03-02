@@ -21,6 +21,17 @@ def get_data():
     )
 
 
+if "data" not in st.session_state:
+    df = get_data()
+    df["select"] = False
+    st.session_state["data"] = df
+
+if "editor_key" not in st.session_state:
+    st.session_state["editor_key"] = random.randint(0, 100000)
+
+if "last_selected_row" not in st.session_state:
+    st.session_state["last_selected_row"] = None
+
 
 def get_row_and_clear_selection():
     key = st.session_state["editor_key"]
@@ -55,20 +66,6 @@ def update_row():
     st.session_state["data"].loc[idx, "bool"] = st.session_state["prueba"]
     st.session_state["data"].loc[idx, "date"] = str(st.session_state["prueba_date"])
 
-
-############
-if "data" not in st.session_state:
-    df = get_data()
-    df["select"] = False
-    st.session_state["data"] = df
-
-if "editor_key" not in st.session_state:
-    st.session_state["editor_key"] = random.randint(0, 100000)
-
-if "last_selected_row" not in st.session_state:
-    st.session_state["last_selected_row"] = None
-
-############
 
 last_row = st.session_state["last_selected_row"]
 
