@@ -42,7 +42,7 @@ def vpn_server_request():
             lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
             geo_data = geo_reverse(lat, lon)
             if geo_data:
-                st.text("Addess:")
+                st.text("Location:")
                 tbl = pd.json_normalize( geo_data )
                 country_info_en = geo_data[1]
                 
@@ -69,8 +69,6 @@ def vpn_server_request():
                 location_info = [country_code, country, county, state, region, province, district, city]
         
                 if st.button("Send"):
-                    st.code(location_info)
-                    #vpn_survey_info = ", ".join( location_info )
                     vpn_survey_info = ", ".join( lc for lc in location_info if lc )
                     st.write(vpn_survey_info)
     except Exception as e:
