@@ -70,7 +70,8 @@ def vpn_server_request():
         
                 if st.button("Send"):
                     st.code(location_info)
-                    vpn_survey_info = ", ".join( location_info )
+                    #vpn_survey_info = ", ".join( location_info )
+                    vpn_survey_info = ", ".join( lc for lc in location_info if ls )
                     st.write(vpn_survey_info)
     except Exception as e:
         st.text(f"Error3: {str(e)}")
