@@ -86,9 +86,10 @@ def c1():
     tab1, tab2 = st.tabs(["Send your Comments...", 
                           "Where would do you want a VPN server?"])
     with tab1:
-        folium_map()
+        st.write("Comments:")
     with tab2:
         st.write("Click on map for where you want a VPN server. Or, fill up form and send after click. We will add it to our VPN server lists asap.")
+        folium_map()
         vpn_server_request()
 
 
