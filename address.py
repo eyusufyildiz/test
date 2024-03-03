@@ -51,7 +51,7 @@ def vpn_server_request():
             tbl = pd.json_normalize( geo_data )
             country_info_en = geo_data[1]
             
-            country_code = country_info_en.get('country_code', "").upper()
+            country_code = country_info_en.get('country_code').upper()
             country      = country_info_en.get('country')
             county       = country_info_en.get('county')
             state        = country_info_en.get('state')
