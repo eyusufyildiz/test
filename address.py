@@ -95,6 +95,7 @@ def c1():
 
     with tab2:
         #vpn_server_request()
+        pass
 
 
 c1()
