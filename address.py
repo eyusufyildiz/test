@@ -37,12 +37,10 @@ def geo_reverse(lat, lon):
 
 def vpn_server_request():
     try:
-        lat, lon = folium_map()
-        #st.code(geo_data)
-        
-        if lat and lot:
+            lat, lon = folium_map()
             lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
             geo_data = geo_reverse(lat, lon)
+            #st.code(geo_data)
             if geo_data:
                 st.text("Addess:")
                 tbl = pd.json_normalize( geo_data )
@@ -73,7 +71,6 @@ def vpn_server_request():
                 location_info = [country_code, country, county, state, region, province, district, city]
         
                 if st.button("Send"):
-    
                     st.code(location_info)
                     vpn_survey_info = ", ".join( location_info )
                     st.write(vpn_survey_info)
