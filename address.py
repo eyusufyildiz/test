@@ -76,7 +76,9 @@ def vpn_server_request():
             city = st.text_input("City:", city)
     
             if st.button("Send"):
-                if city: location_info.append(city)
+                if city: 
+                    location_info.append(city)
+                st.code(location_info)
                 vpn_survey_info = ", ".join( location_info )
                 st.write(vpn_survey_info)
     except Exception as e:
