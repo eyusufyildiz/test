@@ -61,9 +61,6 @@ def vpn_server_request():
             city         = country_info_en.get('city', "")
            #town         = country_info_en.get('town')
             
-            location_info = [country_code, country, county, state, region, province, district, city]
-            #st.write(location_info)
-            
             country_code = st.text_input("Country Code:", country_code)
             country      = st.text_input("Country:", country)
             
@@ -74,10 +71,12 @@ def vpn_server_request():
             if district  : district = st.text_input("District:", district)
             
             city = st.text_input("City:", city)
+            if city: 
+                location_info.append(city)
+            location_info = [country_code, country, county, state, region, province, district, city]
     
             if st.button("Send"):
-                if city: 
-                    location_info.append(city)
+
                 st.code(location_info)
                 vpn_survey_info = ", ".join( location_info )
                 st.write(vpn_survey_info)
