@@ -37,7 +37,7 @@ def geo_reverse(lat, lon):
 def vpn_server_request():
     try:
         map_data = folium_map()
-        if folium_map():
+        if map_data:
             lat, lon = map_data
             lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
             geo_data = geo_reverse(lat, lon)
