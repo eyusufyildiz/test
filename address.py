@@ -85,11 +85,17 @@ def vpn_server_request():
 def c1():
     tab1, tab2 = st.tabs([ "Where would do you want a VPN server?", "Send your Comments..."])
     with tab1:
-        folium_map()
+        #folium_map()
+        lat, lon = folium_map()
+        lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
+        geo_data = geo_reverse(lat, lon)
+
+        st.code(geo_data)
+        
         st.write("Click on map for where you want a VPN server. Or, fill up form and send after click. We will add it to our VPN server lists asap.")
 
     with tab2:
-        vpn_server_request()
+        #vpn_server_request()
 
 
 c1()
