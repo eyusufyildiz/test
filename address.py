@@ -91,7 +91,7 @@ def c1():
         geo_data = geo_reverse(lat, lon)
 
         st.code(geo_data)
-                st.write("Click on map for where you want a VPN server. Or, fill up form and send after click. We will add it to our VPN server lists asap.")
+        st.write("Click on map for where you want a VPN server. Or, fill up form and send after click. We will add it to our VPN server lists asap.")
 
     with tab2:
         #vpn_server_request()
