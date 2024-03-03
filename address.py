@@ -66,8 +66,6 @@ def vpn_server_request():
                 if district  : district = st.text_input("District:", district)
                 
                 city = st.text_input("City:", city)
-                if city: 
-                    location_info.append(city)
                 location_info = [country_code, country, county, state, region, province, district, city]
         
                 if st.button("Send"):
