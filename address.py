@@ -1,12 +1,9 @@
 import streamlit as st
-
 import time
-
 import folium as fl
 from streamlit_folium import st_folium
 import pandas as pd
 from geopy.geocoders import Nominatim
-
 
 ################################
 def folium_map():
