@@ -81,10 +81,10 @@ def vpn_server_request():
 def c1():
     tab1, tab2 = st.tabs([ "Where would do you want a VPN server?", "Send your Comments..."])
     with tab1:
-        #folium_map()
+        st.write("""Click on map for where you want a VPN server.  I there isn't location ino cliek on another place.
+                    Or, fill up form and send after click. 
+                    We will add it to our VPN server lists asap.""")
         vpn_server_request()
-        st.write("Click on map for where you want a VPN server. Or, fill up form and send after click. We will add it to our VPN server lists asap.")
-
     with tab2:
         #vpn_server_request()
         pass
