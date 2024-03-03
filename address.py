@@ -62,7 +62,7 @@ def vpn_server_request():
            #town         = country_info_en.get('town')
             
             location_info = [country_code, country, county, state, region, province, district, city]
-            st.write(location_info)
+            #st.write(location_info)
             
             country_code = st.text_input("Country Code:", country_code)
             country      = st.text_input("Country:", country)
@@ -75,9 +75,10 @@ def vpn_server_request():
             
             city = st.text_input("City:", city)
     
-            #if st.button("Send"):
-            vpn_survey_info = " | ".join( location_info )
-            st.write(vpn_survey_info)
+            if st.button("Send"):
+                if city: location_info.append(city)
+                vpn_survey_info = ", ".join( location_info )
+                st.write(vpn_survey_info)
     except Exception as e:
         st.text(f"Error3: {str(e)}")
 #######################
