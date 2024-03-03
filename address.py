@@ -18,7 +18,7 @@ def folium_map():
             return data
     except Exception as e:
         st.code(f"Error1: {str(e)}")
-        return None
+        return (0,0)
 
 
 def geo_reverse(lat, lon):
@@ -37,43 +37,42 @@ def geo_reverse(lat, lon):
 
 def vpn_server_request():
     try:
-            lat, lon = folium_map()
-            lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
-            geo_data = geo_reverse(lat, lon)
-            #st.code(geo_data)
-            if geo_data:
-                st.text("Addess:")
-                tbl = pd.json_normalize( geo_data )
-                country_info_en = geo_data[1]
-                
-                country_code = country_info_en.get('country_code').upper()
-                country      = country_info_en.get('country')
-                county       = country_info_en.get('county')
-                state        = country_info_en.get('state')
-                province     = country_info_en.get('province')
-                region       = country_info_en.get('region')
-                district     = country_info_en.get('district')
-                city         = country_info_en.get('city')
-               #town         = country_info_en.get('town')
-                
-                country_code = st.text_input("Country Code:", country_code)
-                country      = st.text_input("Country:", country)
-                
-                if county    : county   = st.text_input("County:", county)    
-                if state     : state    = st.text_input("State:", state)
-                if region    : region   = st.text_input("Region:", region)
-                if province  : province = st.text_input("Province:", province)
-                if district  : district = st.text_input("District:", district)
-                
-                city = st.text_input("City:", city)
-                if city: 
-                    location_info.append(city)
-                location_info = [country_code, country, county, state, region, province, district, city]
-        
-                if st.button("Send"):
-                    st.code(location_info)
-                    vpn_survey_info = ", ".join( location_info )
-                    st.write(vpn_survey_info)
+        lat, lon = folium_map()
+        lat, lot = "{:.4f}".format(lat), "{:.4f}".format(lon)
+        geo_data = geo_reverse(lat, lon)
+        if geo_data:
+            st.text("Addess:")
+            tbl = pd.json_normalize( geo_data )
+            country_info_en = geo_data[1]
+            
+            country_code = country_info_en.get('country_code').upper()
+            country      = country_info_en.get('country')
+            county       = country_info_en.get('county')
+            state        = country_info_en.get('state')
+            province     = country_info_en.get('province')
+            region       = country_info_en.get('region')
+            district     = country_info_en.get('district')
+            city         = country_info_en.get('city')
+           #town         = country_info_en.get('town')
+            
+            country_code = st.text_input("Country Code:", country_code)
+            country      = st.text_input("Country:", country)
+            
+            if county    : county   = st.text_input("County:", county)    
+            if state     : state    = st.text_input("State:", state)
+            if region    : region   = st.text_input("Region:", region)
+            if province  : province = st.text_input("Province:", province)
+            if district  : district = st.text_input("District:", district)
+            
+            city = st.text_input("City:", city)
+            if city: 
+                location_info.append(city)
+            location_info = [country_code, country, county, state, region, province, district, city]
+    
+            if st.button("Send"):
+                st.code(location_info)
+                vpn_survey_info = ", ".join( location_info )
+                st.write(vpn_survey_info)
     except Exception as e:
         st.text(f"Error3: {str(e)}")
 #######################
