@@ -14,7 +14,7 @@ def folium_map():
         
         if map.get("last_clicked"):
             data = ( map["last_clicked"]["lat"], map["last_clicked"]["lng"] )
-            st.code(data) # Writes to the app
+            #st.code(data) # Writes to the app
             return data
     except Exception as e:
         st.code(f"Error1: {str(e)}")
