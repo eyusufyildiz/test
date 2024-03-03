@@ -90,7 +90,7 @@ def c1():
     with tab2:
         st.write("Click on map for where you want a VPN server. Or, fill up form and send after click. We will add it to our VPN server lists asap.")
         folium_map()
-        vpn_server_request()
+        #vpn_server_request()
 
 
 c1()
