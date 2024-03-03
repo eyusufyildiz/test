@@ -52,13 +52,13 @@ def vpn_server_request():
             country_info_en = geo_data[1]
             
             country_code = country_info_en.get('country_code', "").upper()
-            country      = country_info_en.get('country', "")
-            county       = country_info_en.get('county', "")
-            state        = country_info_en.get('state', "")
-            province     = country_info_en.get('province', "")
-            region       = country_info_en.get('region', "")
-            district     = country_info_en.get('district', "")
-            city         = country_info_en.get('city', "")
+            country      = country_info_en.get('country')
+            county       = country_info_en.get('county')
+            state        = country_info_en.get('state')
+            province     = country_info_en.get('province')
+            region       = country_info_en.get('region')
+            district     = country_info_en.get('district')
+            city         = country_info_en.get('city')
            #town         = country_info_en.get('town')
             
             country_code = st.text_input("Country Code:", country_code)
