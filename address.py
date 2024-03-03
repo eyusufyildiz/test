@@ -54,18 +54,7 @@ def vpn_server_request():
                 region       = country_info_en.get('region')
                 district     = country_info_en.get('district')
                 city         = country_info_en.get('city')
-               #town         = country_info_en.get('town')
-                
-                #country_code = st.text_input("Country Code:", country_code)
-                #country      = st.text_input("Country:", country)
-                
-                #if county    : county   = st.text_input("County:", county)    
-                #if state     : state    = st.text_input("State:", state)
-                #if region    : region   = st.text_input("Region:", region)
-                #if province  : province = st.text_input("Province:", province)
-                #if district  : district = st.text_input("District:", district)
-                
-                #city = st.text_input("City:", city)
+
                 location_info = [country_code, country, county, state, region, province, district, city]
                 vpn_survey_info = ", ".join( lc for lc in location_info if lc )
                 st.write(vpn_survey_info)
@@ -78,13 +67,10 @@ def vpn_server_request():
 def c1():
     tab1, tab2 = st.tabs([ "Where would do you want a VPN server?", "Send your Comments..."])
     with tab1:
-        st.write("""Click on map for where you want a VPN server.  I there isn't location ino cliek on another place.
-                    Or, fill up form and send after click. 
+        st.text("""Click on map for where you want a VPN server. If no location info click map again.
                     We will add it to our VPN server lists asap.""")
         vpn_server_request()
     with tab2:
-        #vpn_server_request()
         pass
-
 
 c1()
