@@ -18,7 +18,6 @@ def folium_map():
             return data
     except Exception as e:
         st.code(f"Error1: {str(e)}")
-        return (0,0)
 
 
 def geo_reverse(lat, lon):
