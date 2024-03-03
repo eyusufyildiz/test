@@ -67,10 +67,10 @@ def vpn_server_request():
                 
                 #city = st.text_input("City:", city)
                 location_info = [country_code, country, county, state, region, province, district, city]
-        
+                vpn_survey_info = ", ".join( lc for lc in location_info if lc )
+                st.write(vpn_survey_info)
                 if st.button("Send"):
-                    vpn_survey_info = ", ".join( lc for lc in location_info if lc )
-                    st.write(vpn_survey_info)
+                    st.write("Sending...")
     except Exception as e:
         st.text(f"Error3: {str(e)}")
 #######################
