@@ -7,6 +7,5 @@ streamlit-folium
 folium
 geopy
 streamlit-aggrid
-streamlit_ant_design
 
 vega_datasets
