@@ -9,3 +9,5 @@ geopy
 streamlit-aggrid
 
 vega_datasets
+
+streamlit-antd-components
