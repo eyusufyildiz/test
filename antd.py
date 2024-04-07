@@ -19,8 +19,10 @@ if sac.buttons( items=["btn1"]):
 
 
 with st.sidebar:
-    sac.menu(items=[
-        sac.MenuItem(label="Home"),
-        sac.MenuItem(label="About"),
-        sac.MenuItem(label="Contact"),
-    ])
+    opt= sac.menu(items=[
+            sac.MenuItem(label="Home"),
+            sac.MenuItem(label="About"),
+            sac.MenuItem(label="Contact"),
+         ])
+    
+    print(opt)
