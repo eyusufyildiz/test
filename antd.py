@@ -18,7 +18,7 @@ btn = sac.buttons(
 st.write(f'The selected button label is: {btn}')
 
 
-if sac.buttons( items=["btn1"]):
+with sac.buttons( items=["btn1"]):
     print("BTN1")
     time.sleep(3)
 
