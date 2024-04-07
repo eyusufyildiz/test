@@ -17,7 +17,7 @@ btn = sac.buttons(
 st.write(f'The selected button label is: {btn}')
 
 
-sac.buttons(label="Click me")
+a=sac.buttons(label="Click me")
 # 
 # sac.menu(items=[
 #     sac.MenuItem(label="Home"),
