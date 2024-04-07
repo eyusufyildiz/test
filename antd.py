@@ -14,14 +14,13 @@ btn = sac.buttons(
 
 st.write(f'The selected button label is: {btn}')
 
-
 if sac.buttons( items=["btn1"]):
     print("BTN1")
 
- 
-sac.menu(items=[
-     sac.MenuItem(label="Home"),
-     sac.MenuItem(label="About"),
-     sac.MenuItem(label="Contact"),
- ])
 
+with st.sidebar:
+    sac.menu(items=[
+        sac.MenuItem(label="Home"),
+        sac.MenuItem(label="About"),
+        sac.MenuItem(label="Contact"),
+    ])
