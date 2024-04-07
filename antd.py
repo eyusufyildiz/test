@@ -1,6 +1,3 @@
-import streamlit as st
-import streamlit_antd_components as sac
-
 
 import streamlit as st
 import streamlit_antd_components as sac
@@ -14,6 +11,7 @@ btn = sac.buttons(
     radius='lg',
     return_index=False,
 )
+
 st.write(f'The selected button label is: {btn}')
 
 
